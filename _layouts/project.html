@@ -1,15 +1,14 @@
----
-layout: default
----
-<div class="project">
-  <h2>{{ page.title }}</h2>
-  <p><strong>Date:</strong> {{ page.date | date: "%B %d, %Y" }}</p>
-  <p>{{ page.description }}</p>
-  <h3>Process</h3>
-  <p>{{ page.process }}</p>
-  <h3>Outcome</h3>
-  <p>{{ page.outcome }}</p>
-  {% if page.image %}
-    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
-  {% endif %}
+<div class="container">
+  <h2>My Projects</h2>
+  <div class="project-list">
+    <ul>
+      {% for project in site.projects %}
+        <li>
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+          <a href="{{ project.url | relative_url }}">Read more</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>

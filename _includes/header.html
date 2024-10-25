@@ -1,0 +1,51 @@
+<header class="navbar">
+  <div class="container">
+    <h1 class="logo">KAMAL RAJ</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Portfolio</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+let lastScrollTop = 0;
+let scrollTimeout;
+
+// Get the header
+var header = document.querySelector('.navbar');
+
+// Detect scrolling
+window.addEventListener('scroll', function() {
+  // Clear previous timeout to detect if scrolling stops
+  clearTimeout(scrollTimeout);
+
+  // Add sticky class when scrolled past header position
+  if (window.pageYOffset > header.offsetTop) {
+    header.classList.add('sticky');
+  } else {
+    header.classList.remove('sticky');
+  }
+
+  // Detect scroll direction to shrink the header and reduce opacity
+  let currentScroll = window.pageYOffset;
+
+  if (currentScroll > lastScrollTop) {
+    // User is scrolling down -> Shrink header and reduce opacity
+    header.classList.add('shrink');
+  } else {
+    // User is scrolling up -> Don't shrink or expand the header
+    header.classList.remove('shrink');
+  }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Avoid negative scroll
+
+  // Set a timeout to restore the header when scrolling stops
+  scrollTimeout = setTimeout(function() {
+    header.classList.remove('shrink');  // Restore full opacity and size after scrolling stops
+  }, 200);  // Adjust delay to trigger restoration after scrolling stops (200ms)
+});
+</script>

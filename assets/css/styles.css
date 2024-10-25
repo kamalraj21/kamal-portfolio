@@ -1,22 +1,191 @@
+/* Sticky Header Styling */
+.navbar {
+  background-color: #2c3e50;
+  padding: 1rem 0;
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  transition: all 0.3s ease;  /* Smooth transition */
+}
+
+.shrink {
+  padding: 0.5rem 0;  /* Shrinks the header */
+  background-color: #34495e; /* Slightly darker background during shrink */
+  transition: all 0.3s ease;  /* Smooth transition */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sticky + main {
+  padding-top: 80px; /* Adjust based on the header height to avoid content hiding */
+}
+
+/* General Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-  }
-  
-  header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-  }
-  
-  nav ul {
-    list-style: none;
-  }
-  
-  .project {
-    padding: 20px;
-    background-color: white;
-    margin: 10px;
-    border-radius: 5px;
-  }
-  
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #2c3e50;
+  padding: 1rem 0;
+}
+
+.navbar .logo {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #1abc9c;
+  padding: 4rem 0;
+  color: white;
+}
+
+.hero-avatar {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+}
+
+/* Skills Section */
+.skills-section {
+  padding: 4rem 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.skill-item {
+  background-color: #ecf0f1;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.skill-item img {
+  width: 50px;
+  margin-bottom: 15px;
+}
+
+/* Portfolio Section */
+.portfolio-section {
+  padding: 4rem 0;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.portfolio-item img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 4rem 0;
+}
+
+.contact-section input, .contact-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-section button {
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.animated-icon {
+  width: 100px;
+  margin-top: 20px;
+}
+
+/* Footer */
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 2rem 0;
+}
+
+.footer .social-icons {
+  list-style: none;
+  padding: 0;
+}
+
+.footer .social-icons li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.footer .social-icons li a {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.footer img {
+  width: 60px;
+  margin-top: 20px;
+}

@@ -1,0 +1,35 @@
+<div class="project-slider">
+  <div class="slide-container">
+    <div class="slide fade">
+      <img src="/assets/images/project1.jpg" alt="Project 1">
+      <div class="caption">Project 1 Description</div>
+    </div>
+    <div class="slide fade">
+      <img src="/assets/images/project2.jpg" alt="Project 2">
+      <div class="caption">Project 2 Description</div>
+    </div>
+    <!-- Add more slides as needed -->
+  </div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+</script>
