@@ -32,7 +32,7 @@ gem "wdm", "~> 0.1", :platforms => [:mingw, :x64_mingw, :mswin]
 # do not have a Java counterpart.
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 
-gem "jekyll", "~> 4.3.4"             # Ensure Jekyll is listed
+
 gem "jekyll-paginate"                # Add jekyll-paginate for pagination support
 gem "jekyll-seo-tag"                 # Add jekyll-seo-tag if using SEO features
 

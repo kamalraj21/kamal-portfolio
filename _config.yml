@@ -44,6 +44,12 @@ collections:
   testimonials:
     output: true
 
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -64,3 +70,8 @@ collections:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+sass:
+  sass_dir: _sass
+  style: compressed
+

@@ -1,12 +1,28 @@
 <footer class="footer">
-  <div class="container">
-    <p>Location: 123 Street Name, City, Country</p>
-    <p>Follow Me:</p>
-    <ul class="social-icons">
-      <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-      <li><a href="https://github.com" target="_blank">GitHub</a></li>
-    </ul>
-    <img src="/assets/images/robot.gif" alt="Robot Icon" class="animated-icon">
-    <p>&copy; 2024 Kamal Raj. All Rights Reserved.</p>
+  <div class="footer-content">
+    <div class="social-links" aria-label="Social Media Links">
+      <a href="https://github.com/yourusername" 
+         class="social-link" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         aria-label="GitHub Profile">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      <a href="https://linkedin.com/in/yourusername" 
+         class="social-link" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         aria-label="LinkedIn Profile">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      <a href="https://twitter.com/yourusername" 
+         class="social-link" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         aria-label="Twitter Profile">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+    </div>
+    <p class="copyright">© {{ site.time | date: '%Y' }} Kamal Raj. All rights reserved.</p>
   </div>
 </footer>

@@ -1,13 +1,15 @@
 <header class="navbar">
-  <div class="container">
-    <h1 class="logo">KAMAL RAJ</h1>
-    <nav>
-      <ul>
-        <li><a href="/">Portfolio</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </nav>
+  <div class="logo">KAMAL RAJ</div>
+  <nav>
+    <ul>
+      <li><a href="#projects">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="theme-toggle">
+    <input type="checkbox" id="darkmode-toggle" class="darkmode-input">
+    <label for="darkmode-toggle" class="darkmode-label" aria-label="Toggle dark mode"></label>
   </div>
 </header>
 
@@ -15,41 +17,31 @@
 let lastScrollTop = 0;
 let scrollTimeout;
 
-// Get the header
-var header = document.querySelector('.navbar');
+const header = document.querySelector('.navbar');
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
 
-// Detect scrolling
 window.addEventListener('scroll', function() {
-  // Clear previous timeout to detect if scrolling stops
   clearTimeout(scrollTimeout);
 
-  // Add sticky class when scrolled past header position
-  if (window.pageYOffset > header.offsetTop) {
-    header.classList.add('sticky');
+  const currentScroll = window.pageYOffset;
+  
+  if (currentScroll > 50) {
+    header.classList.add('scrolled');
   } else {
-    header.classList.remove('sticky');
+    header.classList.remove('scrolled');
   }
 
-  // Detect scroll direction to shrink the header and reduce opacity
-  let currentScroll = window.pageYOffset;
-
-  if (currentScroll > lastScrollTop) {
-    // User is scrolling down -> Shrink header and reduce opacity
-    header.classList.add('shrink');
-  } else {
-    // User is scrolling up -> Don't shrink or expand the header
-    header.classList.remove('shrink');
-  }
-
-  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Avoid negative scroll
-
-  // Set a timeout to restore the header when scrolling stops
   scrollTimeout = setTimeout(function() {
-    header.classList.remove('shrink');  // Restore full opacity and size after scrolling stops
-  }, 200);  // Adjust delay to trigger restoration after scrolling stops (200ms)
+    header.classList.remove('scrolled');
+  }, 200);
 });
 
+darkModeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  const icon = darkModeToggle.querySelector('span');
+  icon.classList.toggle('theme-switch__icon');
+  icon.classList.toggle('fa-sun');
+  icon.classList.toggle('fa-moon');
+});
 </script>
-
-<link rel="stylesheet" href="assets/css/styles.css">
-<script src="assets/js/script.js"></script>
