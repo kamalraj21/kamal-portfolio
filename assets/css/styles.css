@@ -1,5 +1,8 @@
 CSS (styles.css)
 
+/* Import a clean, modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
 /* General Styling */
 body, html {
   margin: 0;
@@ -81,16 +84,23 @@ body {
 .navbar {
   background-color: var(--navbar-bg);
   color: var(--navbar-text);
-  padding: 1rem 2rem;
+  padding: 1rem 0; /* Remove horizontal padding */
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   z-index: 1000;
-  box-sizing: border-box;
+}
+
+/* Navigation container */
+.nav-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 200px 1fr 200px; /* Fixed width for logo and theme toggle */
+  align-items: center;
 }
 
 /* Logo styling */
@@ -98,13 +108,15 @@ body {
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
+  justify-self: start;
 }
 
 /* Navigation */
 nav {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  justify-self: center;
+  width: 100%;
+  max-width: 600px;
+  font-family: 'Inter', sans-serif;
 }
 
 nav ul {
@@ -112,13 +124,83 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 2rem;
+  justify-content: center;
+  gap: 4rem;
+}
+
+nav ul li {
+  text-align: center;
+  position: relative;
 }
 
 nav ul li a {
-  color: white;
+  color: var(--navbar-text);
   text-decoration: none;
   font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+
+/* Underline animation */
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--dark-accent);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+/* Hover effect */
+nav ul li a:hover {
+  color: var(--dark-accent);
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Active/Selected state */
+nav ul li a.active {
+  color: var(--dark-accent);
+}
+
+nav ul li a.active::after {
+  width: 100%;
+}
+
+/* Click animation */
+nav ul li a:active {
+  transform: scale(0.95);
+}
+
+/* Theme toggle */
+.theme-toggle {
+  justify-self: end;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  nav ul {
+    gap: 3rem; /* Slightly reduce gap on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-content {
+    grid-template-columns: 150px 1fr 100px; /* Adjust column widths for mobile */
+    padding: 0 1rem;
+  }
+  
+  nav ul {
+    gap: 2rem;
+  }
 }
 
 /* Theme switch styling */
@@ -1390,5 +1472,9 @@ body[data-theme="dark"] .about-item p {
   font-weight: 500;
   transition: all 0.3s ease;
 }
+
+
+
+
 
 
