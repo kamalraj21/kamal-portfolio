@@ -29,7 +29,7 @@ body, html {
   --card-dark: #2c3e50;
   --text-light: #ffffff;
   --text-dark: #2c3e50;
-  --heading-dark: #34495e;
+  --heading-dark: #ffffff; /* Color for headings in dark mode */
   --heading-light: #1abc9c;
   --hero-bg: #1abc9c;        /* Bright green */
   --hero-title: #2c3e50;     /* Dark blue */
@@ -39,6 +39,19 @@ body, html {
   --dark-hero-bg: #0a192f;    /* Deep navy background */
   --dark-hero-title: #64ffda; /* Bright mint green */
   --dark-hero-subtitle: #ccd6f6; /* Light blue-gray */
+  --bg-light: #ffffff;
+  --bg-dark: #2c3e50;
+  --card-bg-light: #f8f9fa;
+  --card-bg-dark: #3b3b3b;
+  --text-light: #2c3e50;
+  --text-dark: #ecf0f1;
+  --card-border-light: #e0e0e0;
+  --card-border-dark: #4f4f4f;
+  --button-bg: #3498db;
+  --button-bg-hover: #2980b9;
+  --button-text: #ffffff;
+  --text-dark-card: #e0e0e0; /* Light color for card content in dark mode */
+  --heading-color: #2c3e50; /* Default heading color */
 }
 
 /* Dark mode variables */
@@ -1091,3 +1104,291 @@ a {
   color: var(--dark-accent);
   font-weight: 600;
 }
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.portfolio-item, .about-item {
+  background-color: var(--card-bg-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--card-border-light);
+}
+
+body.dark-mode .portfolio-item, 
+body.dark-mode .about-item {
+  background-color: var(--card-bg-dark);
+  border: 1px solid var(--card-border-dark);
+}
+
+.portfolio-item h3, .about-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: inherit;
+}
+
+.portfolio-item p, .about-item p {
+  color: inherit;
+  line-height: 1.5;
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: var(--button-bg-hover);
+}
+
+body.dark-mode button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+body.dark-mode button:hover {
+  background-color: var(--button-bg-hover);
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+body.dark-mode .section-title {
+  color: var(--title-dark);
+}
+
+.portfolio-item h3, .about-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: inherit;
+}
+
+body.dark-mode .portfolio-item h3, 
+body.dark-mode .about-item h3 {
+  color: var(--text-dark-card);
+}
+
+.portfolio-item p, .about-item p {
+  color: inherit;
+  line-height: 1.5;
+}
+
+body.dark-mode .portfolio-item p, 
+body.dark-mode .about-item p {
+  color: var(--text-dark-card);
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: var(--button-bg-hover);
+}
+
+body.dark-mode button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+body.dark-mode button:hover {
+  background-color: var(--button-bg-hover);
+}
+
+[data-theme="dark"] h1, 
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3 {
+  color: var(--heading-dark); /* Use the correct variable */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+body[data-theme="dark"] .portfolio-item h3, 
+body[data-theme="dark"] .about-item h3,
+body[data-theme="dark"] .portfolio-item p, 
+body[data-theme="dark"] .about-item p {
+  color: var(--text-dark-card); /* Ensure text in cards is visible */
+}
+
+:root {
+  --text-dark: #f0f0f0; /* Brighter color for text in dark mode */
+  --text-secondary: #cccccc; /* Lighter secondary text color */
+  --heading-dark: #ffffff; /* Bright color for headings */
+}
+
+[data-theme="dark"] p, 
+[data-theme="dark"] li, 
+[data-theme="dark"] span {
+  color: var(--text-dark); /* Use brighter text color */
+}
+
+[data-theme="dark"] h1, 
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3 {
+  color: var(--heading-dark); /* Use bright color for headings */
+}
+
+body[data-theme="dark"] .portfolio-item p, 
+body[data-theme="dark"] .about-item p {
+  color: var(--text-secondary); /* Use lighter color for secondary text */
+}
+
+/* Update the root variables for better contrast */
+:root {
+  /* Dark mode colors with better contrast */
+  --dark-bg-primary: #0a192f;
+  --dark-bg-secondary: #112240;
+  --dark-text-heading: #ffffff;    /* Pure white for headings */
+  --dark-text-primary: #e6f1ff;    /* Bright white-blue for main text */
+  --dark-text-secondary: #c5d3eb;  /* Light blue for secondary text */
+  --dark-accent: #64ffda;          /* Mint green for accents */
+  --dark-card-bg: #112240;         /* Card background in dark mode */
+  --dark-card-text: #e6f1ff;       /* Card text in dark mode */
+}
+
+/* Update dark mode text styles */
+[data-theme="dark"] {
+  background-color: var(--dark-bg-primary);
+  color: var(--dark-text-primary);
+}
+
+/* Headings in dark mode */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3 {
+  color: var(--dark-text-heading);
+}
+
+/* Card styles in dark mode */
+[data-theme="dark"] .portfolio-item,
+[data-theme="dark"] .about-item,
+[data-theme="dark"] .skill-card {
+  background-color: var(--dark-card-bg);
+  color: var(--dark-card-text);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Card text in dark mode */
+[data-theme="dark"] .portfolio-item p,
+[data-theme="dark"] .about-item p,
+[data-theme="dark"] .skill-card p {
+  color: var(--dark-text-secondary);
+}
+
+/* Card headings in dark mode */
+[data-theme="dark"] .portfolio-item h3,
+[data-theme="dark"] .about-item h3,
+[data-theme="dark"] .skill-card h3 {
+  color: var(--dark-text-heading);
+}
+
+/* Section titles in dark mode */
+[data-theme="dark"] .section-title {
+  color: var(--dark-text-heading);
+}
+
+/* Portfolio section specific styles */
+[data-theme="dark"] .project-card {
+  background-color: var(--dark-card-bg);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .project-card h3 {
+  color: var(--dark-text-heading);
+  font-weight: 600;
+}
+
+[data-theme="dark"] .project-card p {
+  color: var(--dark-text-secondary);
+}
+
+[data-theme="dark"] .projects-grid {
+  background-color: var(--dark-bg-primary);
+}
+
+/* Portfolio buttons in dark mode */
+[data-theme="dark"] .btn {
+  background-color: var(--dark-accent);
+  color: var(--dark-bg-primary);
+  border: 1px solid var(--dark-accent);
+}
+
+[data-theme="dark"] .btn:hover {
+  background-color: transparent;
+  color: var(--dark-accent);
+}
+
+/* Update existing portfolio styles */
+.project-card {
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.project-card p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  place-items: center; /* Centers items in the grid */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+
