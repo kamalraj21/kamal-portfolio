@@ -3,12 +3,13 @@ layout: default
 ---
 
 <section id="hero">
-    <div class="container">
-        <img src="{{ '/assets/images/persona.png' | relative_url }}" alt="Avatar">
-        <h1>KAMAL RAJ</h1>
-        <div class="divider"></div>
-        <h2>Web Developer - UX Writer - Content Strategist</h2>
-    </div>
+  <div class="hero-gradient"></div>
+  <div class="hero-container">
+    <img src="{{ '/assets/images/persona.png' | relative_url }}" alt="Avatar" class="hero-image">
+    <h1>KAMAL RAJ</h1>
+    <div class="divider"></div>
+    <h2>Content Designer | UX Writer | Technical Writer</h2>
+  </div>
 </section>
 
 <section id="projects">

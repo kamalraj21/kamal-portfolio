@@ -255,35 +255,158 @@ nav ul li a:active {
 
 /* Hero Section */
 #hero {
-  background-color: #20c997;
-  color: white;
-  text-align: center;
-  padding: 10rem 2rem;
-  margin-top: 80px; /* Adjust to prevent overlap */
+    background: linear-gradient(135deg, #20c997 0%, #0B877D 100%);
+    /* Alternative gradients you might like: */
+    /* background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%); */
+    /* background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%); */
+    /* background: linear-gradient(120deg, #20c997 0%, #0B877D 50%, #087F8C 100%); */
+    
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 8rem 0 6rem 0;
+    margin-top: 60px;
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
+/* Add subtle overlay pattern */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 50%);
+    pointer-events: none;
+}
+
+/* Hero content container */
+.hero-container {
+    position: relative; /* To stay above the overlay */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Hero Section Image */
 #hero img {
-  max-width: 150px;
-  margin-bottom: 1rem;
+    max-width: 120px; /* Reduced from 150px */
+    height: 120px; /* Added to maintain aspect ratio */
+    margin-bottom: 2rem;
+    border-radius: 50%;
+    animation: floatAnimation 4s ease-in-out infinite;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    object-fit: cover; /* Ensures image fills circle properly */
+}
+
+/* Refined float animation */
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+    75% {
+        transform: translateY(8px) rotate(-2deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Optional: Add hover effect */
+#hero img:hover {
+    animation-play-state: paused;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] #hero img {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 #hero h1 {
-  font-size: 3rem;
-  margin: 0.5rem 0;
-  font-weight: bold;
+    font-size: 3rem;
+    margin: 0.5rem 0;
+    font-weight: bold;
+    animation: fadeInUp 0.8s ease-out;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #hero h2 {
-  font-size: 1.5rem;
-  margin: 0.5rem 0;
-  font-weight: normal;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    font-weight: normal;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
 #hero .divider {
-  width: 50px;
-  height: 2px;
-  background-color: white;
-  margin: 1rem auto;
+    animation: expandWidth 1s ease-out 0.4s backwards;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+    }
+    to {
+        width: 60px;
+    }
+}
+
+/* Optional: Add hover effects */
+#hero h1:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+#hero h2:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #hero {
+        padding: 6rem 0 4rem 0;
+        min-height: 85vh;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero h2 {
+        font-size: 1.25rem;
+    }
+
+    #hero img {
+        max-width: 130px;
+    }
 }
 
 /* Section Styling */
@@ -1472,6 +1595,9 @@ body[data-theme="dark"] .about-item p {
   font-weight: 500;
   transition: all 0.3s ease;
 }
+
+
+
 
 
 
