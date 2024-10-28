@@ -1,0 +1,348 @@
+/* Case Study Specific Styles */
+.case-study-hero {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    text-align: center;
+    background-color: var(--bg-light);
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.hero-content .subtitle {
+    font-size: 20px;
+    color: var(--text-secondary);
+    margin-bottom: 48px;
+}
+
+.hero-image-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Section Styles */
+.case-study-section {
+    padding: 80px 0;
+}
+
+.case-study-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Add the rest of the CSS from my previous message here */
+/* Case Study Base Styles */
+.case-study {
+    background-color: var(--bg-light);
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.case-study-hero {
+    padding: 100px 0 60px;
+    text-align: center;
+    background-color: var(--bg-light);
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero-image-container {
+    max-width: 800px;
+    margin: 40px auto 0;
+    padding: 24px;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Section Common Styles */
+.case-study-section {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.case-study-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Typography */
+.case-study-hero h1 {
+    font-size: 42px;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.case-study-hero .subtitle {
+    font-size: 20px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.case-study-section h2 {
+    font-size: 32px;
+    color: var(--text-primary);
+    margin-bottom: 40px;
+}
+
+/* Challenge Cards */
+.challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.challenge-card {
+    background-color: var(--card-bg);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.challenge-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    font-size: 20px;
+}
+
+.challenge-card p {
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Solution Approach */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.process-card {
+    background-color: var(--card-bg);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.process-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    font-size: 20px;
+}
+
+.process-card ul {
+    color: var(--text-secondary);
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+/* Examples Section */
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.example-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.example-card:hover {
+    transform: translateY(-5px);
+}
+
+.example-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.example-card p {
+    padding: 16px;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+/* Results and Impact */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.metric-card {
+    background-color: #F3E8FF;
+    padding: 32px 24px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.metric-card h3 {
+    font-size: 36px;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.metric-card p {
+    font-size: 18px;
+    color: var(--text-primary);
+}
+
+/* Tools and Methods */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.tool-card {
+    background-color: var(--card-bg);
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+/* Key Learnings */
+.learnings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.learning-card {
+    background-color: var(--card-bg);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.learning-card p {
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 2rem;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90vh;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.modal-close {
+    position: fixed;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--primary-green);
+}
+
+/* Dark Mode Adjustments */
+[data-theme="dark"] .case-study {
+    background-color: var(--bg-dark);
+}
+
+[data-theme="dark"] .case-study-hero {
+    background-color: var(--bg-dark);
+}
+
+[data-theme="dark"] .hero-image-container {
+    background-color: var(--card-dark);
+}
+
+[data-theme="dark"] .metric-card {
+    background-color: var(--card-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .case-study-hero h1 {
+        font-size: 32px;
+    }
+    
+    .case-study-hero .subtitle {
+        font-size: 18px;
+    }
+    
+    .case-study-section h2 {
+        font-size: 28px;
+    }
+    
+    .examples-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .case-study-container {
+        padding: 0 1rem;
+    }
+    
+    .hero-image-container {
+        padding: 16px;
+    }
+}

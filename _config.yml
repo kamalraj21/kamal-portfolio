@@ -39,17 +39,14 @@ paginate: 5
 collections:
   projects:
     output: true
-  skills:
-    output: true
-  testimonials:
-    output: true
+    permalink: /projects/:path/
 
 defaults:
   - scope:
       path: ""
       type: "projects"
     values:
-      layout: "project"
+      layout: "case-study"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

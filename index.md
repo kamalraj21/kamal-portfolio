@@ -17,16 +17,16 @@ layout: default
         <h2>Portfolio</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <img src="{{ '/assets/images/ecommerce.jpg' | relative_url }}" alt="Project 1">
-                <h3>SaaS Platform</h3>
-                <p>Improved user retention with a redesigned onboarding process.</p>
-                <a href="#" class="btn">View Case Study</a>
+                <img src="{{ '/assets/images/microlearning.jpg' | relative_url }}" alt="Content Design Project">
+                <h3>Content Design Transformation</h3>
+                <p>Reimagined technical documentation through microlearning, reducing complexity by 50% and improving task completion time by 30%.</p>
+                <a href="{{ site.baseurl }}/projects/microlearning-design/" class="btn">View Case Study</a>
             </div>
             <div class="project-card">
-                <img src="{{ '/assets/images/project-management (1).png' | relative_url }}" alt="Project 2">
-                <h3>UX Redesign</h3>
-                <p>Led the UX/UI redesign for a FinTech startup.</p>
-                <a href="#" class="btn">View Case Study</a>
+                <img src="{{ '/assets/images/content-design.png' | relative_url }}" alt="Content Design Project">
+                <h3>Strategic Content Design</h3>
+                <p>Transformed technical documentation into user-centered learning experiences, increasing success rates by 65%.</p>
+                <a href="{{ site.baseurl }}/projects/content-design/" class="btn">View Case Study</a>
             </div>
         </div>
     </div>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <a href="{{ site.baseurl }}/" class="logo-link">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </a>
+            </div>
+            <nav class="quick-nav">
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#challenge">Challenge</a></li>
+                    <li><a href="#solution">Solution</a></li>
+                    <li><a href="#results">Results</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <input type="checkbox" id="darkmode-toggle" class="darkmode-input">
+                <label for="darkmode-toggle" class="darkmode-label"></label>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    {{ content }}
+
+    <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+</body>
+</html>
