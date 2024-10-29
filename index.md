@@ -16,18 +16,19 @@ layout: default
     <div class="container">
         <h2>Portfolio</h2>
         <div class="projects-grid">
+            <!-- Add this card to your projects grid -->
             <div class="project-card">
-                <img src="{{ '/assets/images/microlearning.png' | relative_url }}" alt="Content Design Project">
-                <h3>Content Design Transformation</h3>
-                <p>Reimagined technical documentation through microlearning, reducing complexity by 50% and improving task completion time by 30%.</p>
+                <img src="{{ '/assets/images/microlearning.png' | relative_url }}" alt="Microlearning">
+                <h3>Microlearning Content Design</h3>
+                <p>Transformed technical documentation into user-centered learning experiences, increasing success rates by 65%.</p>
                 <a href="{{ site.baseurl }}/projects/microlearning-design/" class="btn">View Case Study</a>
             </div>
             <div class="project-card">
-                <img src="{{ '/assets/images/content-design.png' | relative_url }}" alt="Content Design Project">
-                <h3>Strategic Content Design</h3>
-                <p>Transformed technical documentation into user-centered learning experiences, increasing success rates by 65%.</p>
-                <a href="{{ site.baseurl }}/projects/content-design/" class="btn">View Case Study</a>
-            </div>
+           <img src="{{ '/assets/images/deployment-tool.png' | relative_url }}" alt="Deployment Tool Project">
+    <h3>Deployment Tool Content Design</h3>
+    <p>Simplified complex AI deployment workflows, reducing deployment time by 30% and improving user satisfaction to 85%.</p>
+    <a href="{{ site.baseurl }}/projects/deployment-tool-design/" class="btn">View Case Study</a>
+</div>
         </div>
     </div>
 </section>

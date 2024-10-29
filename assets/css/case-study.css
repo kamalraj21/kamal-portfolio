@@ -387,57 +387,92 @@ body {
 .results-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 2.5rem;
     margin-top: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.result-card {
+.results-card {
     background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 16px;
-    border: 1px solid var(--card-border);
-    box-shadow: var(--card-shadow);
-    transition: all 0.3s ease;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
 }
 
-.result-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--card-hover-shadow);
-}
-
-.result-card h3 {
-    font-size: 24px;
-    color: var(--primary-blue);
+.results-card h3 {
+    color: var(--primary-teal);
     margin-bottom: 1.5rem;
-    font-weight: 700;
-}
-
-.example-content p {
-    font-size: 18px;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
     font-weight: 600;
+    text-align: left;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid rgba(32, 201, 151, 0.1);
 }
 
-.example-content ul {
+.results-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.example-content li {
-    color: var(--text-secondary);
-    margin-bottom: 0.75rem;
-    padding-left: 1.5rem;
+.results-list li {
     position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    text-align: left;
 }
 
-.example-content li::before {
+.results-list li:last-child {
+    margin-bottom: 0;
+}
+
+.results-list li::before {
     content: "•";
     color: var(--primary-teal);
     position: absolute;
     left: 0;
-    font-weight: bold;
+    top: 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.metric {
+    color: var(--primary-teal);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+/* Dark Mode Refinements */
+[data-theme="dark"] .results-card {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .results-list li {
+    color: #a8b2d1;
+}
+
+[data-theme="dark"] .metric {
+    color: #64ffda;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .results-card {
+        padding: 2rem;
+    }
 }
 
 /* Animations */
@@ -1632,142 +1667,5 @@ html[data-theme="dark"],
 [data-theme="dark"] #overview p[style],
 [data-theme="dark"] .overview-section p[style] {
     color: #a8b2d1 !important;
-}
-
-/* Results section comparison labels - Light mode */
-.comparison-label {
-    color: #f9f9 !important;             /* Light gray for visibility */
-    background: rgba(13, 23, 45, 0.95) !important;
-    font-weight: 600 !important;
-    font-size: 0.875rem !important;
-    padding: 8px 16px !important;
-    border-radius: 4px !important;
-    position: absolute !important;
-    top: 16px !important;
-    left: 16px !important;
-    z-index: 2 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.1em !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Keep dark mode styles as they are */
-[data-theme="dark"] .comparison-label {
-    color: #64ffda !important;
-    /* ... rest of dark mode styles ... */
-}
-
-/* Solution section text colors - Light mode */
-.solution-steps .step ul li {
-    color: #2d3748 !important;  /* Dark gray for better readability */
-    position: relative;
-    padding-left: 1.8rem;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-/* Solution section headings - Light mode */
-.solution-steps .step h3 {
-    color: #20c997 !important;  /* Teal color for headings */
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-/* Keep dark mode styles */
-[data-theme="dark"] .solution-steps .step ul li {
-    color: #e6f1ff !important;
-}
-
-[data-theme="dark"] .solution-steps .step h3 {
-    color: var(--primary-teal) !important;
-}
-
-/* Comparison labels - independent styling */
-.transformation-showcase .comparison-label {
-    color: #ffffff !important;             /* White text */
-    background: rgba(13, 23, 45, 0.95) !important;  /* Dark navy background */
-    font-weight: 600 !important;
-    font-size: 0.875rem !important;
-    padding: 8px 16px !important;
-    border-radius: 4px !important;
-    position: absolute !important;
-    top: 16px !important;
-    left: 16px !important;
-    z-index: 2 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.1em !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Dark mode specific label styling */
-[data-theme="dark"] .transformation-showcase .comparison-label {
-    color: #64ffda !important;             /* Mint color for dark mode */
-    background: rgba(13, 23, 45, 0.95) !important;
-}
-
-/* Independent styling for comparison descriptions */
-.transformation-showcase .comparison-description {
-    margin-top: 1rem !important;
-    font-size: 0.95rem !important;
-    line-height: 1.6 !important;
-    text-align: center !important;
-    padding: 0 1rem !important;
-}
-
-/* Dark mode specific comparison description styling */
-[data-theme="dark"] .transformation-showcase .comparison-description {
-    color: #a8b2d1 !important;  /* Light gray-blue for better readability */
-    opacity: 0.95 !important;
-}
-
-/* Hover effect for dark mode */
-[data-theme="dark"] .transformation-showcase .comparison-item:hover .comparison-description {
-    color: #e6f1ff !important;  /* Brighter color on hover */
-    transition: color 0.3s ease !important;
-}
-
-/* Independent styling for case study hero subtitle */
-.case-study-hero .subtitle {
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 3rem;
-    opacity: 0.9;
-}
-
-/* Dark mode specific hero subtitle styling */
-[data-theme="dark"] .case-study-hero .subtitle {
-    color: #a8b2d1 !important;  /* Light gray-blue for better readability */
-    opacity: 0.95 !important;
-}
-
-/* Optional hover effect */
-[data-theme="dark"] .case-study-hero .subtitle:hover {
-    color: #e6f1ff !important;
-    transition: color 0.3s ease;
-}
-
-/* Independent styling for case study hero subtitle - both modes */
-.case-study-hero .subtitle {
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 3rem;
-    opacity: 0.95;
-    color: #f9f9f9 !important;  /* Light color for visibility in both modes */
-}
-
-/* Dark mode specific hero subtitle styling */
-[data-theme="dark"] .case-study-hero .subtitle {
-    color: #a8b2d1 !important;  /* Light gray-blue for dark mode */
-}
-
-/* Optional hover effects */
-.case-study-hero .subtitle:hover {
-    opacity: 1;
-    transition: all 0.3s ease;
-}
-
-[data-theme="dark"] .case-study-hero .subtitle:hover {
-    color: #e6f1ff !important;
 }
 
