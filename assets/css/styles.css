@@ -65,7 +65,7 @@ body, html {
 /* Dark mode variables */
 [data-theme="dark"] {
   --bg-primary: #1a1a1a;
-  --text-primary: #ffffff;
+  --text-primary: #e6f1ff;
   --bg-secondary: #2c3e50;
   --navbar-bg: #1a1a1a;
   --navbar-text: #ffffff;
@@ -73,8 +73,8 @@ body, html {
   --border-color: #34495e;
   --primary-green: #2ecc71;
   --darker-green: #27ae60;
-  --text-secondary: #ecf0f1;
-  --heading-color: #1abc9c;
+  --text-secondary: #c5d3eb;
+  --heading-color: #64ffda;
   --card-bg: #2c3e50;
 }
 
@@ -1789,6 +1789,70 @@ body[data-theme="dark"] .about-item p {
     .impact-matrix h2 {
         font-size: 28px;
     }
+}
+
+/* Dark mode text colors for home page */
+[data-theme="dark"] {
+    /* Update dark mode variables */
+    --text-primary: #e6f1ff;      /* Bright white-blue for main text */
+    --text-secondary: #c5d3eb;    /* Slightly dimmer for secondary text */
+    --heading-color: #64ffda;     /* Mint green for headings */
+    --card-text: #e6f1ff;         /* Bright text for cards */
+}
+
+/* Home page specific dark mode styles */
+[data-theme="dark"] .hero-container h1 {
+    color: #64ffda !important; /* Mint green for main heading */
+}
+
+[data-theme="dark"] .hero-container h2 {
+    color: #c5d3eb !important; /* Light blue-gray for subtitle */
+}
+
+[data-theme="dark"] .project-card {
+    background-color: #1e293b !important; /* Darker background for cards */
+}
+
+[data-theme="dark"] .project-card h3 {
+    color: #64ffda !important; /* Mint green for card titles */
+}
+
+[data-theme="dark"] .project-card p {
+    color: #e6f1ff !important; /* Bright white-blue for card descriptions */
+}
+
+[data-theme="dark"] .skill-card h3 {
+    color: #64ffda !important; /* Mint green for skill titles */
+}
+
+[data-theme="dark"] .skill-card p {
+    color: #e6f1ff !important; /* Bright white-blue for skill descriptions */
+}
+
+[data-theme="dark"] .section-title,
+[data-theme="dark"] section h2 {
+    color: #64ffda !important; /* Mint green for section titles */
+}
+
+/* Contact form dark mode */
+[data-theme="dark"] .contact-form label {
+    color: #e6f1ff !important;
+}
+
+[data-theme="dark"] .contact-form input,
+[data-theme="dark"] .contact-form textarea {
+    background-color: #1e293b !important;
+    color: #e6f1ff !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Navigation dark mode */
+[data-theme="dark"] .nav-content a {
+    color: #e6f1ff !important;
+}
+
+[data-theme="dark"] .nav-content a:hover {
+    color: #64ffda !important;
 }
 
 

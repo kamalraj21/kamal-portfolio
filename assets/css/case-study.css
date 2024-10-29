@@ -14,19 +14,68 @@
     --card-border: rgba(15, 76, 129, 0.15);
     --card-shadow: 0 4px 20px rgba(15, 76, 129, 0.08);
     --card-hover-shadow: 0 8px 30px rgba(15, 76, 129, 0.12);
+
+    /* Enhanced Text Colors for Light Mode */
+    --heading-color: #1a365d;      /* Darker blue for headings */
+    --text-primary: #2d3748;       /* Dark gray for main text */
+    --text-secondary: #4a5568;     /* Medium gray for secondary text */
+    --card-title: #1a365d;         /* Matching heading color */
+    --description-text: #2d3748;   /* Dark gray for descriptions */
+
+    /* Light Mode Colors */
+    --heading-color: #1a365d;
+    --nav-link-color: #2d3748;
+    --card-title: #1a365d;
+    --card-text: #4a5568;
+    --description-text: #4a5568;
+
+    /* Dark mode variables */
+    --text-dark: #1a202c;
+    --text-secondary: #4a5568;
+    --text-primary: #2d3748;
 }
 
 /* Dark Mode Variables */
 [data-theme="dark"] {
     --primary-blue: #8BD7D2;
     --primary-teal: #2ecc71;
-    --bg-light: #111827;
-    --text-primary: #E5E7EB;
-    --text-secondary: #D1D5DB;
-    --card-bg: #1F2937;
+    --bg-light: #0f172a;
+    --text-primary: #e2e8f0;
+    --text-secondary: #cbd5e1;
+    --card-bg: #1e293b;
     --card-border: rgba(139, 215, 210, 0.2);
     --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     --card-hover-shadow: 0 8px 30px rgba(139, 215, 210, 0.2);
+
+    /* Enhanced Text Colors for Dark Mode */
+    --heading-color: #90cdf4;      /* Light blue for headings */
+    --text-primary: #f7fafc;       /* Very light gray for main text */
+    --text-secondary: #e2e8f0;     /* Light gray for secondary text */
+    --card-title: #90cdf4;         /* Matching heading color */
+    --description-text: #e2e8f0;   /* Light gray for descriptions */
+    --comparison-text: #f7fafc;       /* Bright white for comparison text */
+    --metric-value: #81e6d9;          /* Teal for metric values */
+    --metric-label: #e2e8f0;          /* Light gray for metric labels */
+
+    /* Dark Mode Colors */
+    --heading-color: #90cdf4;
+    --nav-link-color: #e2e8f0;
+    --card-title: #90cdf4;
+    --card-text: #e2e8f0;
+    --description-text: #e2e8f0;
+
+    /* Dark Mode Background */
+    --bg-light: #0f172a;
+    --card-bg: #1e293b;
+
+    /* Dark mode variables */
+    --text-dark: #f8fafc;
+    --text-secondary: #e2e8f0;
+    --text-primary: #f1f5f9;
+
+    /* Background colors */
+    --bg-dark: #0f172a;        /* Dark navy background */
+    --section-bg: #1e293b;     /* Slightly lighter navy for sections */
 }
 
 /* Global Styles */
@@ -37,6 +86,9 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 /* Navigation */
@@ -44,7 +96,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: var(--navbar-bg, #2c3e50);
     backdrop-filter: blur(10px);
     z-index: 1000;
     border-bottom: 1px solid var(--card-border);
@@ -60,12 +112,26 @@ body {
 }
 
 .logo-link {
-    color: var(--primary-blue);
+    color: var(--navbar-text, #ffffff);
+    font-size: 0.875rem;
     text-decoration: none;
-    font-weight: 600;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.logo-link:hover {
+    opacity: 1;
+    color: var(--primary-teal);
+}
+
+.logo-link svg, 
+.logo-link i {
+    font-size: 1rem;
 }
 
 .quick-nav ul {
@@ -77,7 +143,7 @@ body {
 }
 
 .quick-nav a {
-    color: var(--text-primary);
+    color: var(--navbar-text, #ffffff);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -85,6 +151,7 @@ body {
 
 .quick-nav a:hover {
     color: var(--primary-teal);
+    opacity: 0.9;
 }
 
 /* Hero Section */
@@ -165,23 +232,45 @@ body {
     box-shadow: var(--card-hover-shadow);
 }
 
-.metric-card h3 {
-    font-size: 48px;
-    color: var(--primary-blue);
-    margin: 0 0 1rem;
-    font-weight: 800;
+.metric-card .metric-value {
+    color: var(--heading-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
 }
 
-.metric-card p {
-    font-size: 20px;
-    color: var(--text-primary);
-    margin: 0 0 0.5rem;
-    font-weight: 600;
-}
-
-.metric-card .subtitle {
-    font-size: 16px;
+.metric-card .metric-label {
     color: var(--text-secondary);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Dark mode specific adjustments */
+[data-theme="dark"] .metric-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .metric-value {
+    color: var(--primary-teal);
+}
+
+[data-theme="dark"] .metric-label {
+    color: var(--text-secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .metric-card .metric-value {
+        font-size: 2rem;
+    }
+    
+    .metric-card .metric-label {
+        font-size: 1rem;
+    }
 }
 
 /* Case Study Sections */
@@ -197,11 +286,12 @@ body {
 }
 
 .section-content h2 {
-    font-size: 36px;
-    color: var(--primary-blue);
-    margin-bottom: 2rem;
-    font-weight: 800;
+    color: var(--heading-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
     text-align: center;
+    letter-spacing: -0.02em;
 }
 
 /* Challenge Section */
@@ -524,12 +614,12 @@ button:focus {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    background: var(--primary-blue);
+    background: var(--heading-color);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 600;
     z-index: 1;
 }
 
@@ -550,9 +640,10 @@ button:focus {
 
 .comparison-description {
     margin-top: 1rem;
-    color: var(--text-secondary);
-    font-size: 0.875rem;
-    text-align: center;
+    color: var(--description-text);
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 500;
     background: var(--card-bg);
     padding: 1rem;
     border-radius: 8px;
@@ -594,7 +685,7 @@ button:focus {
     }
     
     .comparison-description {
-        font-size: 0.8rem;
+        font-size: 0.875rem;
         padding: 0.75rem;
     }
 }
@@ -623,16 +714,18 @@ button:focus {
 }
 
 .improvement-card h3 {
-    color: var(--primary-blue);
+    color: var(--card-title);
     font-size: 1.5rem;
+    font-weight: 700;
     margin-bottom: 1rem;
-    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
 .improvement-card p {
     color: var(--text-secondary);
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    font-weight: 400;
     margin: 0;
 }
 
@@ -661,7 +754,7 @@ button:focus {
     }
 
     .improvement-card p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
 
@@ -690,5 +783,820 @@ button:focus {
         font-size: 2rem;
         margin-bottom: 2rem;
     }
+}
+
+/* Navigation Links */
+.quick-nav ul li a {
+    color: var(--navbar-text, #ffffff);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.quick-nav ul li a:hover {
+    color: var(--primary-teal);
+    opacity: 0.9;
+}
+
+/* Optional: Add an active state for the current page */
+.quick-nav ul li a.active {
+    color: var(--primary-teal);
+    font-weight: 600;
+}
+
+/* Logo link color */
+.logo-link {
+    color: var(--navbar-text, #ffffff);
+}
+
+/* Theme toggle button in nav */
+.theme-switch__button {
+    color: var(--navbar-text, #ffffff);
+}
+
+/* Optional: Add subtle transition effect */
+.navbar * {
+    transition: color 0.3s ease;
+}
+
+/* Comparison Items */
+.comparison-label {
+    background: var(--heading-color);
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.comparison-description {
+    color: var(--description-text);
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 500;
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* Improvement Cards */
+.improvement-card h3 {
+    color: var(--card-title);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.improvement-card p {
+    color: var(--card-text);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    .section-content h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .improvement-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .improvement-card p {
+        font-size: 1rem;
+    }
+
+    .comparison-description {
+        font-size: 0.875rem;
+    }
+}
+
+/* Focus States for Accessibility */
+.quick-nav ul li a:focus,
+.improvement-card:focus-within {
+    outline: 2px solid var(--heading-color);
+    outline-offset: 2px;
+}
+
+/* Additional Dark Mode Enhancements */
+[data-theme="dark"] .improvement-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .comparison-description {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode specific styles */
+[data-theme="dark"] {
+    /* Improvement Cards */
+    .improvement-card h3 {
+        color: var(--card-title);
+    }
+
+    .improvement-card p {
+        color: var(--text-secondary);
+    }
+
+    /* Comparison Items */
+    .comparison-description {
+        color: var(--comparison-text);
+        background: var(--card-bg);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Metrics */
+    .metric-card {
+        background: var(--card-bg);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .metric-card .metric-value {
+        color: var(--metric-value);
+    }
+
+    .metric-card .metric-label {
+        color: var(--metric-label);
+    }
+
+    /* Section headings */
+    .section-content h2 {
+        color: var(--heading-color);
+    }
+
+    /* General text */
+    p, li, span {
+        color: var(--text-secondary);
+    }
+
+    /* Links */
+    a {
+        color: var(--primary-teal);
+    }
+
+    a:hover {
+        color: #9decf9; /* Lighter teal on hover */
+    }
+}
+
+/* Optional: Add text shadow for better contrast against dark backgrounds */
+[data-theme="dark"] .section-content h2,
+[data-theme="dark"] .improvement-card h3 {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Overview Section Styles */
+.overview-section {
+    margin: 4rem 0;
+    padding: 2rem 0;
+}
+
+/* Overview Text Styles */
+.overview-section p,
+.overview-section ul,
+.overview-section ol {
+    color: #1a202c;  /* Very dark gray, almost black */
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-weight: 500; /* Slightly bolder */
+}
+
+/* Overview heading in light mode */
+.overview-section h2 {
+    color: #0F4C81; /* Darker blue for heading */
+    font-weight: 700;
+}
+
+/* Dark Mode Specific Fixes */
+[data-theme="dark"] {
+    .overview-section {
+        background-color: var(--bg-dark);
+    }
+    
+    .overview-section p,
+    .overview-section ul,
+    .overview-section ol {
+        color: #f8fafc;  /* Very light gray/white */
+        font-weight: 400;
+    }
+    
+    .overview-section h2 {
+        color: #7dd3fc;  /* Light blue */
+    }
+}
+
+/* Ensure smooth transitions */
+.overview-section,
+.overview-section p,
+.overview-section h2 {
+    transition: all 0.3s ease;
+}
+
+/* Now target the specific elements with proper variable usage */
+.section-content p,
+.section-content li,
+.section-content span {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .section-content p,
+[data-theme="dark"] .section-content li,
+[data-theme="dark"] .section-content span {
+    color: var(--text-primary);
+}
+
+/* Overview section specific styles */
+.overview-section p {
+    color: var(--text-primary);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Ensure text is visible in both modes */
+[data-theme="dark"] .overview-section p {
+    color: var(--text-primary);
+}
+
+/* Add specific override if needed */
+[data-theme="dark"] p,
+[data-theme="dark"] li,
+[data-theme="dark"] span {
+    color: var(--text-primary) !important;
+}
+
+/* Direct targeting with high specificity for Overview section */
+[data-theme="dark"] .section-content p,
+[data-theme="dark"] .overview-section p {
+    color: #f1f5f9 !important; /* Light gray for dark mode */
+}
+
+[data-theme="dark"] .section-content li,
+[data-theme="dark"] .overview-section li {
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .section-content span,
+[data-theme="dark"] .overview-section span {
+    color: #f1f5f9 !important;
+}
+
+/* Light mode text */
+.section-content p,
+.overview-section p,
+.section-content li,
+.overview-section li,
+.section-content span,
+.overview-section span {
+    color: #1a202c !important; /* Dark gray for light mode */
+}
+
+/* Additional styles for text structure */
+.section-content p,
+.overview-section p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+/* Overview section text styles with maximum visibility */
+.section-content p,
+.overview-section p {
+    color: rgba(26, 32, 44, 1) !important; /* Solid dark color */
+    font-size: 1.125rem !important;
+    line-height: 1.8 !important;
+    font-weight: 500 !important; /* Slightly bolder */
+    opacity: 1 !important; /* Ensure full opacity */
+    margin-bottom: 1.5rem;
+    text-shadow: none !important; /* Remove any text shadow */
+}
+
+/* Dark mode specific styles */
+[data-theme="dark"] .section-content p,
+[data-theme="dark"] .overview-section p {
+    color: rgb(248, 250, 252) !important; /* Using solid RGB instead of RGBA */
+    font-weight: 500 !important;
+    opacity: 1 !important;
+    background: transparent !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: optimizeLegibility !important;
+}
+
+/* Remove any conflicting styles */
+[data-theme="dark"] .section-content p,
+[data-theme="dark"] .overview-section p {
+    color: rgb(248, 250, 252) !important; /* Force white text in dark mode */
+}
+
+/* Ensure no variable interference */
+[data-theme="dark"] {
+    --text-primary: rgb(248, 250, 252);
+    --text-secondary: rgb(248, 250, 252);
+    --text-dark: rgb(248, 250, 252);
+}
+
+/* Dark mode background colors */
+[data-theme="dark"] {
+    /* Background colors */
+    --bg-dark: #0f172a;        /* Dark navy background */
+    --section-bg: #1e293b;     /* Slightly lighter navy for sections */
+}
+
+/* Apply dark backgrounds */
+[data-theme="dark"] body {
+    background-color: var(--bg-dark) !important;
+}
+
+[data-theme="dark"] .section-content,
+[data-theme="dark"] .overview-section {
+    background-color: var(--bg-dark) !important;
+}
+
+/* Ensure text remains visible on dark background */
+[data-theme="dark"] .section-content p,
+[data-theme="dark"] .overview-section p {
+    color: rgb(248, 250, 252) !important; /* Bright white text */
+    font-weight: 500 !important;
+    opacity: 1 !important;
+    background: transparent !important;
+}
+
+/* Section titles in dark mode */
+[data-theme="dark"] .section-content h2,
+[data-theme="dark"] .overview-section h2 {
+    color: #7dd3fc !important; /* Light blue for headings */
+}
+
+/* Ensure all content areas have dark background */
+[data-theme="dark"] .main-content,
+[data-theme="dark"] .container,
+[data-theme="dark"] main {
+    background-color: var(--bg-dark) !important;
+}
+
+/* Optional: Add subtle gradient for depth */
+[data-theme="dark"] body {
+    background: linear-gradient(to bottom, #0f172a, #1e293b) !important;
+    min-height: 100vh;
+}
+
+/* Enhanced Dark Mode Background Styling */
+[data-theme="dark"] {
+    /* Refined color variables */
+    --bg-primary: #0a1929;     /* Deeper navy base */
+    --bg-secondary: #132f4c;   /* Lighter navy for sections */
+    --bg-gradient-start: #0a1929;
+    --bg-gradient-end: #132f4c;
+    --card-bg: rgba(30, 41, 59, 0.8);  /* Semi-transparent card background */
+}
+
+/* Body background with subtle gradient */
+[data-theme="dark"] body {
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end)) !important;
+    min-height: 100vh;
+}
+
+/* Section styling */
+[data-theme="dark"] .section-content,
+[data-theme="dark"] .overview-section {
+    background-color: transparent !important;
+    position: relative;
+}
+
+/* Card styling */
+[data-theme="dark"] .improvement-card,
+[data-theme="dark"] .metric-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Add subtle noise texture overlay */
+[data-theme="dark"] body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+/* Ensure content stays above noise texture */
+[data-theme="dark"] .main-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Enhanced card hover effects */
+[data-theme="dark"] .improvement-card:hover,
+[data-theme="dark"] .metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Section transitions */
+[data-theme="dark"] .section-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.1), 
+        transparent
+    );
+}
+
+/* Optional: Add subtle glow to headings */
+[data-theme="dark"] h2 {
+    text-shadow: 0 0 20px rgba(125, 211, 252, 0.1);
+}
+
+/* Dark Mode Enhanced Background and Elements */
+[data-theme="dark"] {
+    /* Core background colors */
+    --bg-primary: #0a192f;      /* Deep navy background */
+    --bg-secondary: #112240;    /* Slightly lighter navy */
+    --card-bg: #1e2937;        /* Card background */
+    --text-primary: #e2e8f0;   /* Light text */
+    --heading-color: #64ffda;  /* Bright mint for headings */
+}
+
+/* Main background */
+[data-theme="dark"] body {
+    background: var(--bg-primary) !important;
+}
+
+/* Section backgrounds */
+[data-theme="dark"] .section-content,
+[data-theme="dark"] .overview-section,
+[data-theme="dark"] .challenge-section,
+[data-theme="dark"] .solution-section {
+    background-color: var(--bg-primary) !important;
+    padding: 4rem 0;
+    position: relative;
+}
+
+/* Cards styling */
+[data-theme="dark"] .improvement-card,
+[data-theme="dark"] .metric-card,
+[data-theme="dark"] .challenge-card {
+    background-color: var(--card-bg) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Section titles */
+[data-theme="dark"] .section-content h2,
+[data-theme="dark"] h2.section-title {
+    color: var(--heading-color) !important;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Card text */
+[data-theme="dark"] .improvement-card p,
+[data-theme="dark"] .metric-card p,
+[data-theme="dark"] .challenge-card p {
+    color: var(--text-primary) !important;
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+/* Optional: Add subtle gradient to main background */
+[data-theme="dark"] body {
+    background: linear-gradient(
+        to bottom,
+        var(--bg-primary) 0%,
+        var(--bg-secondary) 100%
+    ) !important;
+    min-height: 100vh;
+}
+
+/* Ensure container backgrounds are transparent */
+[data-theme="dark"] .container,
+[data-theme="dark"] .main-content {
+    background: transparent !important;
+}
+
+/* Add subtle section separators */
+[data-theme="dark"] .section-content:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Enhanced card hover effects */
+[data-theme="dark"] .improvement-card:hover,
+[data-theme="dark"] .metric-card:hover,
+[data-theme="dark"] .challenge-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Full page dark mode background */
+[data-theme="dark"] {
+    /* Core background colors */
+    --bg-primary: #0a192f;      /* Deep navy */
+    --bg-gradient-start: #0a192f;
+    --bg-gradient-end: #112240;
+    --nav-bg: #0a192f;
+    --card-bg: rgba(30, 41, 59, 0.8);
+}
+
+/* Full page background with gradient */
+[data-theme="dark"] body {
+    background: var(--bg-primary) !important;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main content wrapper */
+[data-theme="dark"] .main-content,
+[data-theme="dark"] .container-fluid,
+[data-theme="dark"] .container {
+    background: linear-gradient(
+        135deg,
+        var(--bg-gradient-start) 0%,
+        var(--bg-gradient-end) 100%
+    ) !important;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation bar background */
+[data-theme="dark"] .navbar {
+    background-color: var(--nav-bg) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Section backgrounds */
+[data-theme="dark"] .section-content,
+[data-theme="dark"] .overview-section,
+[data-theme="dark"] .challenge-section,
+[data-theme="dark"] .solution-section {
+    background: transparent !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* Optional: Add subtle texture overlay */
+[data-theme="dark"] .main-content::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure all content has proper z-index */
+[data-theme="dark"] .section-content,
+[data-theme="dark"] .overview-section,
+[data-theme="dark"] .challenge-section,
+[data-theme="dark"] .solution-section,
+[data-theme="dark"] .improvement-card,
+[data-theme="dark"] .metric-card {
+    position: relative;
+    z-index: 2;
+}
+
+/* Fix any potential white gaps */
+html[data-theme="dark"],
+[data-theme="dark"] body {
+    background-color: var(--bg-primary) !important;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Ensure footer also has dark background */
+[data-theme="dark"] footer {
+    background-color: var(--bg-primary) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode colors */
+[data-theme="dark"] {
+    /* Core colors */
+    --bg-primary: #0a192f;
+    --bg-secondary: #112240;
+    --text-primary: #e6f1ff;
+    --text-secondary: #c5d3eb;
+    --heading-color: #64ffda;
+    --card-bg: rgba(17, 34, 64, 0.8);
+}
+
+/* Main background */
+[data-theme="dark"] body {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Text colors for dark mode */
+[data-theme="dark"] p,
+[data-theme="dark"] .section-content p,
+[data-theme="dark"] .overview-section p,
+[data-theme="dark"] .challenge-section p,
+[data-theme="dark"] .solution-section p {
+    color: var(--text-primary) !important;
+    opacity: 1 !important;
+}
+
+/* Headings in dark mode */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] .section-title {
+    color: var(--heading-color) !important;
+}
+
+/* Card styling */
+[data-theme="dark"] .metric-card,
+[data-theme="dark"] .improvement-card {
+    background-color: var(--card-bg) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card text */
+[data-theme="dark"] .metric-card p,
+[data-theme="dark"] .improvement-card p {
+    color: var(--text-secondary) !important;
+}
+
+/* Remove any conflicting styles */
+[data-theme="dark"] .section-content p[style],
+[data-theme="dark"] .overview-section p[style] {
+    color: var(--text-primary) !important;
+}
+
+/* Text colors for dark mode with specific color */
+[data-theme="dark"] p,
+[data-theme="dark"] .section-content p,
+[data-theme="dark"] .overview-section p,
+[data-theme="dark"] .challenge-section p,
+[data-theme="dark"] .solution-section p {
+    color: #1b1818 !important;
+    font-weight: 500 !important;
+    opacity: 1 !important;
+    background: transparent !important;
+}
+
+/* Ensure no other styles override this */
+[data-theme="dark"] .section-content p[style],
+[data-theme="dark"] .overview-section p[style] {
+    color: #1b1818 !important;
+}
+
+/* Card text should also be visible */
+[data-theme="dark"] .metric-card p,
+[data-theme="dark"] .improvement-card p {
+    color: #1b1818 !important;
+}
+
+/* Overview/intro text in dark mode */
+[data-theme="dark"] .overview-section p,
+[data-theme="dark"] #overview .section-content p {
+    color: #1b1818 !important;
+    font-weight: 500 !important;
+    opacity: 1 !important;
+    background: transparent !important;
+}
+
+/* Card text in dark mode - using a light color for visibility */
+[data-theme="dark"] .metric-card p,
+[data-theme="dark"] .improvement-card p,
+[data-theme="dark"] .challenge-card p {
+    color: #e6f1ff !important; /* Light blue-white color */
+    opacity: 1 !important;
+}
+
+/* Card subtitles/additional text */
+[data-theme="dark"] .metric-card .subtitle,
+[data-theme="dark"] .improvement-card .subtitle {
+    color: #c5d3eb !important; /* Slightly dimmer light color for secondary text */
+}
+
+/* Ensure other section text remains visible */
+[data-theme="dark"] .challenge-section p:not(.challenge-card p),
+[data-theme="dark"] .solution-section p:not(.improvement-card p) {
+    color: #e6f1ff !important;
+}
+
+/* Solution section card styling */
+[data-theme="dark"] .solution-steps .step {
+    background-color: var(--card-bg) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Bullet list styling */
+.solution-steps .step ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 1.5rem 0;
+}
+
+.solution-steps .step ul li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Custom bullet points */
+.solution-steps .step ul li::before {
+    content: "•";
+    color: var(--primary-teal);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Step headings */
+.solution-steps .step h3 {
+    color: var(--primary-teal) !important;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+/* Grid layout for steps */
+.solution-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .solution-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Hero section text colors for dark mode */
+[data-theme="dark"] .case-study-hero h1 {
+    color: #e6f1ff !important; /* Bright white-blue for main title */
+}
+
+[data-theme="dark"] .case-study-hero .subtitle {
+    color: #c5d3eb !important; /* Slightly dimmer for subtitle */
+}
+
+[data-theme="dark"] .hero-content {
+    color: #e6f1ff !important;
+}
+
+/* Keep existing hero styles */
+.case-study-hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, var(--primary-teal) 0%, #0B877D 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
 }
 
