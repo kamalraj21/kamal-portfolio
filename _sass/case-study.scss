@@ -1,0 +1,215 @@
+/* Base Layout */
+.case-study {
+    background-color: var(--bg-light);
+    min-height: 100vh;
+}
+
+/* Section Containers */
+.case-study-section {
+    padding: 80px 0;
+}
+
+.case-study-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Section Titles */
+.case-study-section h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--title-color);
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+/* Card Base Styles */
+.card-base {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+}
+
+.card-base:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-hover-shadow);
+    border-color: var(--accent-color);
+}
+
+/* Metric Cards */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.metric-card {
+    @extend .card-base;
+    text-align: center;
+}
+
+.metric-card h3 {
+    font-size: 48px;
+    color: var(--metric-title);
+    margin-bottom: 16px;
+    font-weight: 800;
+}
+
+.metric-card p {
+    font-size: 20px;
+    color: var(--metric-text);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.metric-card .subtitle {
+    font-size: 16px;
+    color: var(--metric-subtitle);
+    display: block;
+    font-weight: 450;
+}
+
+/* Challenge Cards */
+.challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.challenge-card {
+    @extend .card-base;
+}
+
+/* Solution Steps */
+.solution-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.step h3 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.step h3::before {
+    content: attr(data-number);
+    color: var(--accent-color);
+    font-weight: 800;
+    font-size: 28px;
+}
+
+/* Results Cards */
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+/* Color Variables */
+:root {
+    --bg-light: #ffffff;
+    --card-bg: #ffffff;
+    --card-border: rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --card-hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --title-color: #1a1a1a;
+    --accent-color: #2563eb;
+    --metric-title: #2563eb;
+    --metric-text: #1f2937;
+    --metric-subtitle: #4b5563;
+}
+
+[data-theme="dark"] {
+    --bg-light: #0f172a;
+    --card-bg: #1e293b;
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --card-hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    --title-color: #f8fafc;
+    --accent-color: #60a5fa;
+    --metric-title: #60a5fa;
+    --metric-text: #f1f5f9;
+    --metric-subtitle: #cbd5e1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .solution-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .metrics-grid,
+    .solution-steps,
+    .examples-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study-section h2 {
+        font-size: 28px;
+    }
+
+    .metric-card h3 {
+        font-size: 36px;
+    }
+
+    .card-base {
+        padding: 24px;
+    }
+}
+
+/* Section Navigation */
+.section-nav {
+    position: sticky;
+    top: 0;
+    background: var(--bg-light);
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.section-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.section-nav a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.section-nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Back Link */
+.back-link {
+    display: inline-block;
+    color: var(--text-primary);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--accent-color);
+} 

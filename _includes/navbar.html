@@ -1,0 +1,116 @@
+<nav class="navbar">
+  <div class="navbar-content">
+    <a href="{{ site.baseurl }}/" class="navbar-brand">{{ site.title }}</a>
+    
+    <ul class="navbar-links">
+      <li><a href="{{ site.baseurl }}/">Home</a></li>
+      <li><a href="{{ site.baseurl }}/about">About</a></li>
+      <li><a href="{{ site.baseurl }}/projects">Projects</a></li>
+      <li><a href="{{ site.baseurl }}/contact">Contact</a></li>
+    </ul>
+
+    <!-- Add theme toggle switch -->
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+      </label>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .navbar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-links a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  .navbar-links a:hover {
+    color: #007bff;
+  }
+
+  /* Theme Switch Styles */
+  .theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+  }
+
+  .theme-switch {
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 48px;
+  }
+
+  .theme-switch input {
+    display: none;
+  }
+
+  .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+
+  .slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 16px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 16px;
+  }
+
+  input:checked + .slider {
+    background-color: var(--dark-accent);
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(24px);
+  }
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+</style>

@@ -45,4 +45,63 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
+
+    const slider = document.querySelector('.comparison-slider');
+    const dots = document.querySelectorAll('.dot');
+    const items = document.querySelectorAll('.comparison-item img');
+    
+    // Handle image loading
+    items.forEach(img => {
+        img.addEventListener('load', () => {
+            img.classList.add('loaded');
+        });
+    });
+    
+    // Update dots on scroll
+    let scrollTimeout;
+    slider.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            const index = Math.round(slider.scrollLeft / (slider.offsetWidth * 0.8));
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }, 50);
+    });
+    
+    // Handle dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            const itemWidth = slider.offsetWidth * 0.8;
+            slider.scrollTo({
+                left: index * itemWidth,
+                behavior: 'smooth'
+            });
+        });
+    });
+    
+    // Touch device detection and hint
+    if ('ontouchstart' in window) {
+        const hint = document.createElement('div');
+        hint.classList.add('swipe-hint');
+        slider.appendChild(hint);
+        
+        // Remove hint after first interaction
+        slider.addEventListener('touchstart', () => {
+            hint.style.display = 'none';
+        }, { once: true });
+    }
+    
+    // Optional: Keyboard navigation
+    slider.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+            e.preventDefault();
+            const direction = e.key === 'ArrowLeft' ? -1 : 1;
+            const itemWidth = slider.offsetWidth * 0.8;
+            slider.scrollBy({
+                left: direction * itemWidth,
+                behavior: 'smooth'
+            });
+        }
+    });
 });

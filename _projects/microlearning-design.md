@@ -1,7 +1,7 @@
 ---
 layout: case-study
-title: Content Design Transformation
-subtitle: Reimagining technical documentation through microlearning
+title: Microlearning Design System
+subtitle: Transforming complex documentation into bite-sized learning modules
 ---
 
 <!-- Hero Section -->
@@ -10,62 +10,60 @@ subtitle: Reimagining technical documentation through microlearning
         <h1>{{ page.title }}</h1>
         <p class="subtitle">{{ page.subtitle }}</p>
         <div class="hero-image-container">
-            <img src="{{ site.baseurl }}/assets/images/microlearning-hero-bg.jpg" alt="Microlearning Illustration">
+            <img src="{{ site.baseurl }}/assets/images/microlearning-hero-bg.jpg" alt="Microlearning Design System">
         </div>
     </div>
 </section>
 
 <!-- Impact Metrics -->
-<section id="impact" class="case-study-section impact-metrics">
-    <div class="case-study-container">
-        <div class="metrics-grid">
-            <div class="metric-card">
-                <h3>50%</h3>
-                <p>Decrease in content verbosity</p>
-                <div class="subtitle">Streamlined documentation for better comprehension</div>
-            </div>
-            <div class="metric-card">
-                <h3>30%</h3>
-                <p>Faster task completion</p>
-                <div class="subtitle">Improved efficiency in learning and implementation</div>
-            </div>
-            <div class="metric-card">
-                <h3>85%</h3>
-                <p>Positive user feedback</p>
-                <div class="subtitle">Enhanced user satisfaction and engagement</div>
-            </div>
+<section class="impact-metrics">
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <h3>50%</h3>
+            <p>Reduction in Learning Time</p>
+            <div class="subtitle">From 30-minute modules to focused 5-minute lessons</div>
+        </div>
+        <div class="metric-card">
+            <h3>85%</h3>
+            <p>Information Retention</p>
+            <div class="subtitle">Improved knowledge retention through bite-sized content</div>
+        </div>
+        <div class="metric-card">
+            <h3>3x</h3>
+            <p>User Engagement</p>
+            <div class="subtitle">Increased completion rates for technical documentation</div>
         </div>
     </div>
 </section>
 
 <!-- Overview Section -->
 <section id="overview" class="case-study-section">
-    <div class="case-study-container">
+    <div class="section-content">
         <h2>Overview</h2>
-        <p>Led an end-to-end transformation of technical documentation, implementing a microlearning strategy that dramatically improved user experience and learning outcomes. Converting lengthy technical guides into focused, task-based modules resulted in significantly higher engagement and faster task completion rates.</p>
+        <p>A comprehensive redesign of technical documentation, transforming lengthy guides into focused, task-based microlearning modules. This project aimed to improve user engagement and knowledge retention while reducing cognitive load.</p>
     </div>
 </section>
 
 <!-- Challenge Section -->
 <section id="challenge" class="case-study-section">
-    <div class="case-study-container">
-        <h2>Challenge</h2>
+    <div class="section-content">
+        <h2>The Challenge</h2>
         <div class="challenges-grid">
-            <div class="challenge-card card-base">
-                <h3>Complex Navigation</h3>
-                <p>Users struggled to find relevant information in complex chapter structures</p>
-            </div>
-            <div class="challenge-card card-base">
+            <div class="challenge-card">
                 <h3>Information Overload</h3>
-                <p>Verbose content made it difficult to extract key information</p>
+                <p>Users struggled with lengthy documentation and complex technical concepts</p>
             </div>
-            <div class="challenge-card card-base">
-                <h3>Poor Task Alignment</h3>
-                <p>Content wasn't organized around user tasks and goals</p>
+            <div class="challenge-card">
+                <h3>Poor Retention</h3>
+                <p>Traditional formats led to low information retention and engagement</p>
             </div>
-            <div class="challenge-card card-base">
-                <h3>Learning Curve</h3>
-                <p>30-minute learning sessions were too long and overwhelming</p>
+            <div class="challenge-card">
+                <h3>Time Constraints</h3>
+                <p>Users needed quick access to relevant information during their workflow</p>
+            </div>
+            <div class="challenge-card">
+                <h3>Complex Navigation</h3>
+                <p>Difficulty finding specific information in large documentation sets</p>
             </div>
         </div>
     </div>
@@ -73,34 +71,31 @@ subtitle: Reimagining technical documentation through microlearning
 
 <!-- Solution Section -->
 <section id="solution" class="case-study-section">
-    <div class="case-study-container">
-        <h2>Solution Approach</h2>
+    <div class="section-content">
+        <h2>The Solution</h2>
         <div class="solution-steps">
-            <div class="step card-base">
-                <h3>1. Discovery & Analysis</h3>
+            <div class="step">
+                <h3>Research & Analysis</h3>
                 <ul>
-                    <li>Conducted comprehensive content audit</li>
-                    <li>Identified user pain points</li>
-                    <li>Mapped user journey</li>
-                    <li>Analyzed learning patterns</li>
+                    <li>Conducted user interviews and surveys</li>
+                    <li>Analyzed learning patterns and pain points</li>
+                    <li>Identified key improvement areas</li>
                 </ul>
             </div>
-            <div class="step card-base">
-                <h3>2. Strategy Development</h3>
+            <div class="step">
+                <h3>Design System</h3>
                 <ul>
                     <li>Created microlearning framework</li>
-                    <li>Developed content architecture</li>
-                    <li>Established content guidelines</li>
-                    <li>Designed learning paths</li>
+                    <li>Developed content guidelines</li>
+                    <li>Built reusable components</li>
                 </ul>
             </div>
-            <div class="step card-base">
-                <h3>3. Implementation</h3>
+            <div class="step">
+                <h3>Implementation</h3>
                 <ul>
-                    <li>Led Design Thinking workshops</li>
-                    <li>Created content prototypes</li>
-                    <li>Gathered user feedback</li>
-                    <li>Refined and optimized content</li>
+                    <li>Restructured content architecture</li>
+                    <li>Developed interactive modules</li>
+                    <li>Integrated feedback system</li>
                 </ul>
             </div>
         </div>
@@ -109,33 +104,51 @@ subtitle: Reimagining technical documentation through microlearning
 
 <!-- Results Section -->
 <section id="results" class="case-study-section">
-    <div class="case-study-container">
-        <h2>Results</h2>
-        <div class="examples-grid">
-            <div class="example-card card-base">
-                <h3>Before: Complex 30-Minute Guide</h3>
-                <div class="example-content">
-                    <p class="module-title">Chapter 5: System Configuration</p>
-                    <ul>
-                        <li>5.1 Introduction to Configuration</li>
-                        <li>5.2 Basic Setup Requirements</li>
-                        <li>5.3 Advanced Configuration Options</li>
-                        <li>5.4 Troubleshooting Common Issues</li>
-                    </ul>
-                </div>
-            </div>
+    <div class="section-content">
+        <h2>Results & Impact</h2>
+        
+<!-- Visual Comparison -->
+<div class="transformation-showcase">
+    <div class="comparison-slider">
+        <div class="comparison-item">
+         <span class="comparison-label">Before</span>
+         <img src="{{ site.baseurl }}/assets/images/Before-example-monolith-doc-structure.png" alt="Traditional documentation approach">
+         <p class="comparison-description">Traditional lengthy documentation with complex navigation and dense information structure</p>
+       </div>
+    
+   <div class="comparison-item">
+        <span class="comparison-label">After</span>
+        <img src="{{ site.baseurl }}/assets/images/after-mircrolearning-learning.png" alt="Streamlined step-by-step guide">
+          <p class="comparison-description">Clear, focused steps with visual hierarchy and progressive disclosure</p>
+   </div>
+    <div class="comparison-item">
+        <span class="comparison-label">After</span>
+         <img src="{{ site.baseurl }}/assets/images/After-example-microlearning-model.png" alt="Interactive documentation interface">
+         <p class="comparison-description">Interactive interface with contextual help and clear navigation</p>
+    </div>
             
-            <div class="example-card card-base">
-                <h3>After: 5-Minute Microlearning Module</h3>
-                <div class="example-content">
-                    <p class="module-title">Configure Your First Integration (5 mins)</p>
-                    <ul>
-                        <li>What you'll learn</li>
-                        <li>Access the configuration panel</li>
-                        <li>Set up basic integration</li>
-                        <li>Test your connection</li>
-                    </ul>
-                </div>
+</div>
+            
+ <div class="comparison-dots">
+                <button class="dot active" aria-label="View first example"></button>
+                <button class="dot" aria-label="View second example"></button>
+                <button class="dot" aria-label="View third example"></button>
+ </div>
+        </div>
+
+     
+<div class="improvements-grid">
+            <div class="improvement-card">
+                <h3>Structure</h3>
+                <p>From dense blocks of text to clear, scannable content with visual hierarchy</p>
+            </div>
+            <div class="improvement-card">
+                <h3>Navigation</h3>
+                <p>From complex menu trees to intuitive, task-based organization</p>
+            </div>
+            <div class="improvement-card">
+                <h3>Engagement</h3>
+                <p>From passive reading to interactive, step-by-step guidance</p>
             </div>
         </div>
     </div>

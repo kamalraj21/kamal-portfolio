@@ -17,7 +17,7 @@ layout: default
         <h2>Portfolio</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <img src="{{ '/assets/images/microlearning.jpg' | relative_url }}" alt="Content Design Project">
+                <img src="{{ '/assets/images/microlearning.png' | relative_url }}" alt="Content Design Project">
                 <h3>Content Design Transformation</h3>
                 <p>Reimagined technical documentation through microlearning, reducing complexity by 50% and improving task completion time by 30%.</p>
                 <a href="{{ site.baseurl }}/projects/microlearning-design/" class="btn">View Case Study</a>
