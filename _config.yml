@@ -18,29 +18,28 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Kamal Raj  Portfolio
-email: kamal.raj2181@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  A content designer portfolio by Kamal Raj showcasing content design, UX writing, and information architecture.
-baseurl: "/kamal-portfolio" # the subpath of your site, e.g. /blog
-url: "https://kamalraj21.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: jekyllrb
-github_username:  kamalraj21
+title: Kamal Raj Portfolio
+description: A content designer portfolio by Kamal Raj showcasing content design, UX writing, and information architecture.
+baseurl: "/kamal-portfolio"
+url: "https://kamalraj21.github.io"
 
 # Build settings
-theme: minima
+markdown: kramdown
+remote_theme: jekyll/minima
+
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate
 
-paginate: 5
-
+# Collections
 collections:
   projects:
     output: true
     permalink: /projects/:path/
 
+# Defaults
 defaults:
   - scope:
       path: ""
@@ -48,30 +47,12 @@ defaults:
     values:
       layout: "case-study"
 
-# Sass settings
-sass:
-  sass_dir: _sass
-  style: compressed
-
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
- exclude:
-   - .sass-cache/
-   - .jekyll-cache/
-   - gemfiles/
-   - Gemfile
-   - Gemfile.lock
-   - node_modules/
-   - vendor/bundle/
-   - vendor/cache/
-   - vendor/gems/
-   - vendor/ruby/
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
 
 
 
