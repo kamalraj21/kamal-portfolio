@@ -23,15 +23,20 @@ description: A content designer portfolio by Kamal Raj showcasing content design
 baseurl: "/kamal-portfolio"
 url: "https://kamalraj21.github.io"
 
-# Build settings
-markdown: kramdown
-remote_theme: jekyll/minima
+# GitHub Pages settings
+github: [metadata]
+lsi: false
+safe: true
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
 
-# Plugins
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-paginate
+# Theme
+theme: minima
 
 # Collections
 collections:
@@ -47,12 +52,10 @@ defaults:
     values:
       layout: "case-study"
 
-# Exclude files
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
 
 
