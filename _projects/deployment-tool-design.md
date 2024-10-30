@@ -20,18 +20,18 @@ subtitle: Simplifying AI deployment workflows for industrial environments
     <div class="metrics-grid">
         <div class="metric-card">
             <h3 class="metric-value">30%</h3>
-            <p class="metric-label">Faster Deployment Time</p>
-            <p class="metric-description">Streamlined guidance accelerated setup process</p>
+            <h3>Faster Deployment Time</h3>
+            <p>Streamlined guidance accelerated setup process</p>
         </div>
         <div class="metric-card">
             <h3 class="metric-value">85%</h3>
-            <p class="metric-label">User Satisfaction</p>
-            <p class="metric-description">Improved ease of use and accessibility</p>
+            <h3>User Satisfaction</h3>
+            <p>Improved ease of use and accessibility</p>
         </div>
         <div class="metric-card">
             <h3 class="metric-value">25%</h3>
-            <p class="metric-label">Reduction in Support Queries</p>
-            <p class="metric-description">Through actionable error messages</p>
+            <h3>Reduction in Support Queries</h3>
+            <p>Through actionable error messages</p>
         </div>
     </div>
 </section>
@@ -103,9 +103,7 @@ subtitle: Simplifying AI deployment workflows for industrial environments
     <div class="section-content">
         <h2>Results & Impact</h2>
         
-        <!-- Results Grid -->
         <div class="results-grid">
-            <!-- Metrics -->
             <div class="results-card">
                 <h3>Impact Metrics</h3>
                 <ul class="results-list">
@@ -115,7 +113,6 @@ subtitle: Simplifying AI deployment workflows for industrial environments
                 </ul>
             </div>
 
-            <!-- Feedback -->
             <div class="results-card">
                 <h3>User Feedback</h3>
                 <ul class="results-list">

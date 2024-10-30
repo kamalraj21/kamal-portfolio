@@ -61,10 +61,10 @@ subtitle: Transforming complex documentation into bite-sized learning modules
                 <h3>Time Constraints</h3>
                 <p>Users needed quick access to relevant information during their workflow</p>
             </div>
-            <div class="challenge-card">
+            <!--<div class="challenge-card">
                 <h3>Complex Navigation</h3>
                 <p>Difficulty finding specific information in large documentation sets</p>
-            </div>
+            </div>-->
         </div>
     </div>
 </section>

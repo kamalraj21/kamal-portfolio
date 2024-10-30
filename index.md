@@ -17,6 +17,7 @@ layout: default
 <section id="projects">
     <div class="container">
         <h2>Portfolio</h2>
+        <p class="section-description">Turning technical complexity into user delight. See how strategic content design drove 65% higher engagement and 30% faster product adoption across enterprise solutions.</p>
         <div class="projects-grid">
             <div class="project-card">
                 <img src="{{ '/assets/images/microlearning.png' | relative_url }}" alt="Microlearning">
@@ -43,6 +44,7 @@ layout: default
 <section id="about">
     <div class="container">
         <h2>About</h2>
+        <p class="section-description">UX writer and content strategist transforming technical complexity into intuitive product experiences. I combine strategic content design with clear technical writing to boost user engagement, streamline documentation, and create seamless digital experiences that drive adoption.</p>
         <div class="skills-grid">
             <div class="skill-card">
                 <img src="{{ '/assets/images/content-strategy-skills.png' | relative_url }}" alt="Content Strategy">
@@ -66,8 +68,9 @@ layout: default
 <section id="contact">
     <div class="container">
         <h2>Contact</h2>
+        <p class="section-description">Let's collaborate on making your product's content more engaging and user-friendly.</p>
         <div class="contact-form">
-            <form action="https://formspree.io/f/your-form-id" method="POST">
+            <form action="https://formspree.io/f/mkgnonyw" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>

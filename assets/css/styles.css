@@ -447,8 +447,7 @@ section h2 {
 
 /* Footer Styling */
 .footer {
-  background-color: #2c3e50 !important;
-  color: #ffffff !important;
+  background-color: var(--bg-dark);
   padding: 2rem 0;
   margin-top: 3rem;
 }
@@ -456,39 +455,61 @@ section h2 {
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
+  padding: 0 2rem;
+  text-align: center;
 }
 
+/* Social Links */
 .social-links {
-  display: flex;
-  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.social-link {
-  color: #ffffff;
+.social-links a {
+  color: var(--text-primary);
   font-size: 1.5rem;
+  margin: 0 1rem;
   transition: color 0.3s ease;
 }
 
-.social-link:hover {
-  color: #3498db;
+.social-links a:hover {
+  color: #20c997;
 }
 
-.copyright {
-  text-align: center;
-  margin: 0;
+/* Credits */
+.credits {
   font-size: 0.9rem;
-  color: #ffffff;
+  color: var(--text-secondary);
 }
 
-/* Dark mode styles for footer */
+.credits p {
+  margin: 0.5rem 0;
+}
+
+.icon-credits {
+  font-size: 0.8rem;
+}
+
+.icon-credits a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.icon-credits a:hover {
+  color: #20c997;
+}
+
+/* Dark Mode */
 [data-theme="dark"] .footer {
-  background-color: #1a1a1a;
-  border-top: 1px solid #2c3e50;
+  background-color: var(--bg-darker);
+}
+
+[data-theme="dark"] .social-links a {
+  color: var(--text-primary-dark);
+}
+
+[data-theme="dark"] .credits {
+  color: var(--text-secondary-dark);
 }
 
 /* Responsive Styling */
@@ -1087,643 +1108,6 @@ a {
 
 /* Footer */
 [data-theme="dark"] .footer {
-  background-color: var(--dark-bg-secondary);
-}
-
-[data-theme="dark"] .footer-content {
-  color: var(--dark-text-primary);
-}
-
-[data-theme="dark"] .copyright {
-  color: var(--dark-text-secondary);
-  font-size: 1rem;
-}
-
-/* Links */
-[data-theme="dark"] a {
-  color: var(--dark-accent);
-  font-weight: 500;
-}
-
-[data-theme="dark"] a:hover {
-  color: var(--dark-text-heading);
-}
-
-/* Social Links */
-[data-theme="dark"] .social-links a {
-  color: var(--dark-text-primary);
-  font-size: 1.5rem;
-}
-
-[data-theme="dark"] .social-links a:hover {
-  color: var(--dark-accent);
-}
-
-/* Additional Text Enhancements */
-[data-theme="dark"] strong,
-[data-theme="dark"] b {
-  color: var(--dark-text-heading);
-  font-weight: 700;
-}
-
-[data-theme="dark"] .highlight {
-  color: var(--dark-accent);
-  font-weight: 600;
-}
-
-body {
-  background-color: var(--bg-light);
-  color: var(--text-light);
-  transition: background-color 0.3s, color 0.3s;
-}
-
-body.dark-mode {
-  background-color: var(--bg-dark);
-  color: var(--text-dark);
-}
-
-.portfolio-item, .about-item {
-  background-color: var(--card-bg-light);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease, background-color 0.3s;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid var(--card-border-light);
-}
-
-body.dark-mode .portfolio-item, 
-body.dark-mode .about-item {
-  background-color: var(--card-bg-dark);
-  border: 1px solid var(--card-border-dark);
-}
-
-.portfolio-item h3, .about-item h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: inherit;
-}
-
-.portfolio-item p, .about-item p {
-  color: inherit;
-  line-height: 1.5;
-}
-
-button {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 1rem;
-}
-
-button:hover {
-  background-color: var(--button-bg-hover);
-}
-
-body.dark-mode button {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-}
-
-body.dark-mode button:hover {
-  background-color: var(--button-bg-hover);
-}
-
-.section-title {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: var(--text-light);
-  text-align: center;
-}
-
-body.dark-mode .section-title {
-  color: var(--title-dark);
-}
-
-.portfolio-item h3, .about-item h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: inherit;
-}
-
-body.dark-mode .portfolio-item h3, 
-body.dark-mode .about-item h3 {
-  color: var(--text-dark-card);
-}
-
-.portfolio-item p, .about-item p {
-  color: inherit;
-  line-height: 1.5;
-}
-
-body.dark-mode .portfolio-item p, 
-body.dark-mode .about-item p {
-  color: var(--text-dark-card);
-}
-
-button {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 1rem;
-}
-
-button:hover {
-  background-color: var(--button-bg-hover);
-}
-
-body.dark-mode button {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-}
-
-body.dark-mode button:hover {
-  background-color: var(--button-bg-hover);
-}
-
-[data-theme="dark"] h1, 
-[data-theme="dark"] h2, 
-[data-theme="dark"] h3 {
-  color: var(--heading-dark); /* Use the correct variable */
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-body[data-theme="dark"] .portfolio-item h3, 
-body[data-theme="dark"] .about-item h3,
-body[data-theme="dark"] .portfolio-item p, 
-body[data-theme="dark"] .about-item p {
-  color: var(--text-dark-card); /* Ensure text in cards is visible */
-}
-
-:root {
-  --text-dark: #f0f0f0; /* Brighter color for text in dark mode */
-  --text-secondary: #cccccc; /* Lighter secondary text color */
-  --heading-dark: #ffffff; /* Bright color for headings */
-}
-
-[data-theme="dark"] p, 
-[data-theme="dark"] li, 
-[data-theme="dark"] span {
-  color: var(--text-dark); /* Use brighter text color */
-}
-
-[data-theme="dark"] h1, 
-[data-theme="dark"] h2, 
-[data-theme="dark"] h3 {
-  color: var(--heading-dark); /* Use bright color for headings */
-}
-
-body[data-theme="dark"] .portfolio-item p, 
-body[data-theme="dark"] .about-item p {
-  color: var(--text-secondary); /* Use lighter color for secondary text */
-}
-
-/* Update the root variables for better contrast */
-:root {
-  /* Dark mode colors with better contrast */
-  --dark-bg-primary: #0a192f;
-  --dark-bg-secondary: #112240;
-  --dark-text-heading: #ffffff;    /* Pure white for headings */
-  --dark-text-primary: #e6f1ff;    /* Bright white-blue for main text */
-  --dark-text-secondary: #c5d3eb;  /* Light blue for secondary text */
-  --dark-accent: #64ffda;          /* Mint green for accents */
-  --dark-card-bg: #112240;         /* Card background in dark mode */
-  --dark-card-text: #e6f1ff;       /* Card text in dark mode */
-}
-
-/* Update dark mode text styles */
-[data-theme="dark"] {
-  background-color: var(--dark-bg-primary);
-  color: var(--dark-text-primary);
-}
-
-/* Headings in dark mode */
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] h3 {
-  color: var(--dark-text-heading);
-}
-
-/* Card styles in dark mode */
-[data-theme="dark"] .portfolio-item,
-[data-theme="dark"] .about-item,
-[data-theme="dark"] .skill-card {
-  background-color: var(--dark-card-bg);
-  color: var(--dark-card-text);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-/* Card text in dark mode */
-[data-theme="dark"] .portfolio-item p,
-[data-theme="dark"] .about-item p,
-[data-theme="dark"] .skill-card p {
-  color: var(--dark-text-secondary);
-}
-
-/* Card headings in dark mode */
-[data-theme="dark"] .portfolio-item h3,
-[data-theme="dark"] .about-item h3,
-[data-theme="dark"] .skill-card h3 {
-  color: var(--dark-text-heading);
-}
-
-/* Section titles in dark mode */
-[data-theme="dark"] .section-title {
-  color: var(--dark-text-heading);
-}
-
-/* Portfolio section specific styles */
-[data-theme="dark"] .project-card {
-  background-color: var(--dark-card-bg);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .project-card h3 {
-  color: var(--dark-text-heading);
-  font-weight: 600;
-}
-
-[data-theme="dark"] .project-card p {
-  color: var(--dark-text-secondary);
-}
-
-[data-theme="dark"] .projects-grid {
-  background-color: var(--dark-bg-primary);
-}
-
-/* Portfolio buttons in dark mode */
-[data-theme="dark"] .btn {
-  background-color: var(--dark-accent);
-  color: var(--dark-bg-primary);
-  border: 1px solid var(--dark-accent);
-}
-
-[data-theme="dark"] .btn:hover {
-  background-color: transparent;
-  color: var(--dark-accent);
-}
-
-/* Update existing portfolio styles */
-.project-card {
-  background-color: var(--bg-secondary);
-  border-radius: 12px;
-  padding: 2rem;
-  margin: 1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.project-card h3 {
-  font-size: 1.5rem;
-  margin: 1rem 0;
-}
-
-.project-card p {
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  place-items: center; /* Centers items in the grid */
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Button styles */
-.btn {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-/* Documentation Examples Section */
-.documentation-examples {
-    padding: 4rem 0;
-    background-color: var(--bg-secondary);
-}
-
-.documentation-examples .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.thumbnail-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.thumbnail-item {
-    background: var(--bg-light);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.thumbnail-item:hover {
-    transform: translateY(-5px);
-}
-
-.thumbnail {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.thumbnail-caption {
-    padding: 1rem;
-    text-align: center;
-    margin: 0;
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-.modal-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 90vh;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.modal-close {
-    position: fixed;
-    top: 15px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .thumbnail-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Hero Section */
-.case-study-hero {
-    padding: 100px 0 60px;
-    text-align: center;
-    background-color: var(--bg-light);
-}
-
-.hero-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.case-study-hero h1 {
-    font-size: 42px;
-    color: var(--text-primary);
-    margin-bottom: 16px;
-    font-weight: 600;
-}
-
-.case-study-hero .subtitle {
-    font-size: 20px;
-    color: var(--text-secondary);
-    margin-bottom: 48px;
-}
-
-.hero-image-container {
-    max-width: 800px;
-    margin: 0 auto 60px;
-    padding: 24px;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.hero-image-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-}
-
-/* Impact Matrix */
-.impact-matrix {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.impact-matrix h2 {
-    font-size: 32px;
-    color: var(--text-primary);
-    margin-bottom: 40px;
-}
-
-.metrics-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.metric-card {
-    background-color: #F3E8FF;
-    padding: 32px 24px;
-    border-radius: 12px;
-    text-align: center;
-}
-
-.metric-card h3 {
-    font-size: 36px;
-    color: var(--text-primary);
-    margin-bottom: 12px;
-    font-weight: 600;
-}
-
-.metric-card p {
-    font-size: 18px;
-    color: var(--text-primary);
-    line-height: 1.4;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .case-study-hero h1 {
-        font-size: 32px;
-    }
-    
-    .case-study-hero .subtitle {
-        font-size: 18px;
-    }
-    
-    .hero-image-container {
-        padding: 16px;
-    }
-    
-    .metrics-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-    
-    .impact-matrix h2 {
-        font-size: 28px;
-    }
-}
-
-/* Dark mode text colors for home page */
-[data-theme="dark"] {
-    /* Update dark mode variables */
-    --text-primary: #e6f1ff;      /* Bright white-blue for main text */
-    --text-secondary: #c5d3eb;    /* Slightly dimmer for secondary text */
-    --heading-color: #64ffda;     /* Mint green for headings */
-    --card-text: #e6f1ff;         /* Bright text for cards */
-}
-
-/* Home page specific dark mode styles */
-[data-theme="dark"] .hero-container h1 {
-    color: #64ffda !important; /* Mint green for main heading */
-}
-
-[data-theme="dark"] .hero-container h2 {
-    color: #c5d3eb !important; /* Light blue-gray for subtitle */
-}
-
-[data-theme="dark"] .project-card {
-    background-color: #1e293b !important; /* Darker background for cards */
-}
-
-[data-theme="dark"] .project-card h3 {
-    color: #64ffda !important; /* Mint green for card titles */
-}
-
-[data-theme="dark"] .project-card p {
-    color: #e6f1ff !important; /* Bright white-blue for card descriptions */
-}
-
-[data-theme="dark"] .skill-card h3 {
-    color: #64ffda !important; /* Mint green for skill titles */
-}
-
-[data-theme="dark"] .skill-card p {
-    color: #e6f1ff !important; /* Bright white-blue for skill descriptions */
-}
-
-[data-theme="dark"] .section-title,
-[data-theme="dark"] section h2 {
-    color: #64ffda !important; /* Mint green for section titles */
-}
-
-/* Contact form dark mode */
-[data-theme="dark"] .contact-form label {
-    color: #e6f1ff !important;
-}
-
-[data-theme="dark"] .contact-form input,
-[data-theme="dark"] .contact-form textarea {
-    background-color: #1e293b !important;
-    color: #e6f1ff !important;
-    border-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-/* Navigation dark mode */
-[data-theme="dark"] .nav-content a {
-    color: #e6f1ff !important;
-}
-
-[data-theme="dark"] .nav-content a:hover {
-    color: #64ffda !important;
-}
-
-/* Hero image animation and styling */
-.hero-image {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    border: 3px solid var(--primary-green);
-    padding: 5px;
-    margin-bottom: 2rem;
-    position: relative;
-    animation: pulseGlow 3s ease-in-out infinite;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-/* Subtle pulse glow animation */
-@keyframes pulseGlow {
-    0% {
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        transform: scale(1);
-    }
-    50% {
-        box-shadow: 0 5px 25px rgba(26, 188, 156, 0.3);
-        transform: scale(1.02);
-    }
-    100% {
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        transform: scale(1);
-    }
-}
-
-/* Dark mode adjustments */
-[data-theme="dark"] .hero-image {
-    border-color: var(--primary-teal);
-    animation: pulseGlowDark 3s ease-in-out infinite;
-}
-
-@keyframes pulseGlowDark {
-    0% {
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-        transform: scale(1);
-    }
-    50% {
-        box-shadow: 0 5px 25px rgba(32, 201, 151, 0.3);
-        transform: scale(1.02);
-    }
-    100% {
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-        transform: scale(1);
-    }
-}
-
-/* Footer Dark Mode Styles */
-[data-theme="dark"] .footer {
   background-color: #1e293b;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -1918,6 +1302,439 @@ span.comparison-label {
 /* Label background color in light mode */
 .comparison-label {
   background: #1e293b !important; /* Darker background for better contrast */
+}
+
+/* Case Study Card Titles */
+.case-study-card h3,
+.deployment-card h3,
+.content-design-card h3 {
+  color: #64ffda !important; /* Mint green - consistent with your theme */
+  font-weight: 600 !important;
+}
+
+/* Dark mode - maintain same color for consistency */
+[data-theme="dark"] .case-study-card h3,
+[data-theme="dark"] .deployment-card h3,
+[data-theme="dark"] .content-design-card h3 {
+  color: #64ffda !important;
+}
+
+/* Ensure hover states maintain visibility */
+.case-study-card:hover h3,
+.deployment-card:hover h3,
+.content-design-card:hover h3 {
+  color: #64ffda !important;
+}
+
+/* Unified Card Styles */
+.metric-card,
+.challenge-card,
+.results-card,
+.step,
+.results-grid .results-card {
+  background-color: var(--card-bg-light);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Card Titles */
+.metric-card h3,
+.challenge-card h3,
+.results-card h3,
+.step h3,
+.results-grid .results-card h3 {
+  color: #20c997 !important;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Card Content */
+.metric-card p,
+.challenge-card p,
+.results-card p,
+.step p,
+.results-grid .results-card p,
+.results-list li {
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Metric Values */
+.metric-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #20c997;
+  margin-bottom: 1rem;
+}
+
+/* Card Grid Layouts */
+.metrics-grid,
+.challenges-grid,
+.results-grid,
+.solution-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hover Animation */
+.metric-card:hover,
+.challenge-card:hover,
+.results-card:hover,
+.step:hover,
+.results-grid .results-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] .metric-card,
+[data-theme="dark"] .challenge-card,
+[data-theme="dark"] .results-card,
+[data-theme="dark"] .step,
+[data-theme="dark"] .results-grid .results-card {
+  background-color: var(--card-bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .metric-card:hover,
+[data-theme="dark"] .challenge-card:hover,
+[data-theme="dark"] .results-card:hover,
+[data-theme="dark"] .step:hover,
+[data-theme="dark"] .results-grid .results-card:hover {
+  box-shadow: 0 8px 20px rgba(32, 201, 151, 0.1);
+}
+
+/* List Styles in Cards */
+.results-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.results-list li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.results-list li:before {
+  content: "•";
+  color: #20c997;
+  position: absolute;
+  left: 0;
+}
+
+/* Metric Highlights */
+.metric {
+  color: #20c997;
+  font-weight: 600;
+}
+
+/* Hero Section Styles */
+.case-study-hero {
+  background-color: #f8f9fa;  /* Light background for light mode */
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Title - Light Mode */
+.case-study-hero h1 {
+  color: #1a1a1a;  /* Dark color for better visibility */
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Hero Subtitle - Light Mode */
+.case-study-hero .subtitle {
+  color: #4a4a4a;  /* Dark gray for better readability */
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+/* Dark Mode Overrides */
+[data-theme="dark"] .case-study-hero {
+  background-color: var(--bg-dark);
+}
+
+[data-theme="dark"] .case-study-hero h1 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .case-study-hero .subtitle {
+  color: #e6f1ff;
+}
+
+/* Hero Image Container */
+.hero-image-container {
+  max-width: 1000px;
+  margin: 2rem auto 0;
+}
+
+.hero-image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Card Titles - Home Page */
+[data-theme="dark"] .project-card h3,
+[data-theme="dark"] .featured-project h3,
+[data-theme="dark"] .project-title,
+[data-theme="dark"] .card-title,
+[data-theme="dark"] .featured-title {
+  color: #2ecc71 !important;  /* Bright green */
+  font-weight: 600;
+}
+
+/* Optional: Hover state for interactive titles */
+[data-theme="dark"] .project-card:hover h3,
+[data-theme="dark"] .featured-project:hover h3,
+[data-theme="dark"] .card-title:hover {
+  color: #27ae60 !important;  /* Slightly darker green on hover */
+}
+
+/* If you have any specific title classes that need the same treatment */
+[data-theme="dark"] .home-card h3,
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .card-heading {
+  color: #2ecc71 !important;
+}
+
+/* Dark Mode Card Titles - Home Page and About Section */
+[data-theme="dark"] .project-card h3,
+[data-theme="dark"] .featured-project h3,
+[data-theme="dark"] .project-title,
+[data-theme="dark"] .card-title,
+[data-theme="dark"] .featured-title,
+[data-theme="dark"] .about-card h3,
+[data-theme="dark"] .experience-card h3,
+[data-theme="dark"] .education-card h3,
+[data-theme="dark"] .skills-card h3,
+[data-theme="dark"] .interests-card h3,
+[data-theme="dark"] .timeline-card h3 {
+  color: #2ecc71 !important;  /* Bright green */
+  font-weight: 600;
+}
+
+/* Hover states */
+[data-theme="dark"] .project-card:hover h3,
+[data-theme="dark"] .featured-project:hover h3,
+[data-theme="dark"] .card-title:hover,
+[data-theme="dark"] .about-card:hover h3,
+[data-theme="dark"] .experience-card:hover h3,
+[data-theme="dark"] .education-card:hover h3,
+[data-theme="dark"] .skills-card:hover h3,
+[data-theme="dark"] .interests-card:hover h3,
+[data-theme="dark"] .timeline-card:hover h3 {
+  color: #27ae60 !important;  /* Slightly darker green on hover */
+}
+
+/* Additional About section specific elements if needed */
+[data-theme="dark"] .timeline-item h4,
+[data-theme="dark"] .skill-category h4,
+[data-theme="dark"] .experience-title,
+[data-theme="dark"] .education-degree {
+  color: #2ecc71 !important;
+}
+
+/* About Section Card Titles - Light Mode */
+.about-section h2,
+.about-section h3,
+.about-card h3,
+.experience-card h3,
+.education-card h3,
+.skills-card h3,
+.timeline-card h3,
+.interests-card h3 {
+  color: #2c3e50;  /* Dark color for light mode */
+  font-weight: 600;
+}
+
+/* About Section Card Titles - Dark Mode */
+[data-theme="dark"] .about-section h2,
+[data-theme="dark"] .about-section h3,
+[data-theme="dark"] .about-card h3,
+[data-theme="dark"] .experience-card h3,
+[data-theme="dark"] .education-card h3,
+[data-theme="dark"] .skills-card h3,
+[data-theme="dark"] .timeline-card h3,
+[data-theme="dark"] .interests-card h3,
+[data-theme="dark"] .experience-title,
+[data-theme="dark"] .education-degree,
+[data-theme="dark"] .skill-category,
+[data-theme="dark"] .timeline-item-title {
+  color: #2ecc71 !important;  /* Bright green */
+  font-weight: 600;
+  opacity: 1 !important;  /* Ensure full visibility */
+}
+
+/* Additional elements that might need the same treatment */
+[data-theme="dark"] .timeline-position,
+[data-theme="dark"] .timeline-degree,
+[data-theme="dark"] .skill-title {
+  color: #2ecc71 !important;
+}
+
+/* Hover states if needed */
+[data-theme="dark"] .about-card:hover h3,
+[data-theme="dark"] .experience-card:hover h3,
+[data-theme="dark"] .education-card:hover h3,
+[data-theme="dark"] .skills-card:hover h3,
+[data-theme="dark"] .timeline-card:hover h3 {
+  color: #2ecc71 !important;
+  opacity: 0.9;  /* Subtle hover effect */
+}
+
+/* Base Dark Mode Heading Styles */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3 {
+  color: var(--heading-color);
+}
+
+/* About Section Specific Overrides for Dark Mode */
+[data-theme="dark"] .about-section h2,
+[data-theme="dark"] .about-section h3,
+[data-theme="dark"] .about-card h3,
+[data-theme="dark"] .experience-card h3,
+[data-theme="dark"] .education-card h3,
+[data-theme="dark"] .skills-card h3,
+[data-theme="dark"] .timeline-card h3,
+[data-theme="dark"] .interests-card h3,
+[data-theme="dark"] .experience-title,
+[data-theme="dark"] .education-degree,
+[data-theme="dark"] .skill-category,
+[data-theme="dark"] .timeline-item-title {
+  color: #2ecc71 !important;  /* Force the green color */
+  font-weight: 600;
+}
+
+/* Update the CSS variable if needed */
+:root {
+  --heading-color-dark: #2ecc71;  /* Update the variable for dark mode */
+}
+
+/* About Section Cards - Dark Mode */
+[data-theme="dark"] .about-section .card h3,
+[data-theme="dark"] .about-section .card-title,
+[data-theme="dark"] .about-section .timeline-item h3,
+[data-theme="dark"] .about-section .experience-item h3,
+[data-theme="dark"] .about-section .education-item h3,
+[data-theme="dark"] .about-section .skills-item h3,
+[data-theme="dark"] .about-section .card-header h3 {
+  color: #2ecc71 !important;
+  font-weight: 600;
+}
+
+/* Specific overrides for different card types */
+[data-theme="dark"] .experience-card .card-title,
+[data-theme="dark"] .education-card .card-title,
+[data-theme="dark"] .skills-card .card-title,
+[data-theme="dark"] .interests-card .card-title,
+[data-theme="dark"] .timeline-card .card-title {
+  color: #2ecc71 !important;
+}
+
+/* Additional elements that might need the same treatment */
+[data-theme="dark"] .about-section .card-subtitle,
+[data-theme="dark"] .about-section .timeline-position,
+[data-theme="dark"] .about-section .experience-company,
+[data-theme="dark"] .about-section .education-school {
+  color: #2ecc71 !important;
+}
+
+/* Ensure section headings maintain the color */
+[data-theme="dark"] .about-section .section-heading,
+[data-theme="dark"] .about-section > h2,
+[data-theme="dark"] .about-section > h3 {
+  color: #2ecc71 !important;
+}
+
+/* Contact Form Fields - Dark Mode */
+[data-theme="dark"] .contact-form input,
+[data-theme="dark"] .contact-form textarea {
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+/* Optional: Hover and Focus states for better interaction */
+[data-theme="dark"] .contact-form input:hover,
+[data-theme="dark"] .contact-form textarea:hover {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .contact-form input:focus,
+[data-theme="dark"] .contact-form textarea:focus {
+  border-color: #20c997 !important;
+  outline: none;
+}
+
+.section-description {
+  text-align: center;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: -1rem auto 3rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+[data-theme="dark"] .section-description {
+  color: #a8b2d1;
+  opacity: 0.9;
+}
+
+/* Section description styles */
+.section-description {
+  text-align: center;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: -1rem auto 3rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Dark mode specific styles with improved visibility */
+[data-theme="dark"] .section-description {
+  color: #e2e8f0 !important; /* Lighter gray for better visibility */
+  opacity: 0.95; /* Increased opacity */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for better contrast */
+}
+
+/* Optional: Add hover state for better interaction */
+[data-theme="dark"] .section-description:hover {
+  color: #f8fafc !important; /* Even lighter on hover */
+  opacity: 1;
+}
+
+/* Ensure proper contrast in different sections */
+[data-theme="dark"] #projects .section-description,
+[data-theme="dark"] #about .section-description,
+[data-theme="dark"] #contact .section-description {
+  color: #ccd6f6 !important; /* Consistent with your dark theme */
+  font-weight: 400; /* Slightly bolder for better readability */
 }
 
 
