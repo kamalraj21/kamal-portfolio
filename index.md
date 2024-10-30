@@ -38,19 +38,19 @@ layout: default
         <h2>About</h2>
         <div class="skills-grid">
             <div class="skill-card">
-                <img src="{{ '/assets/images/skills.gif' | relative_url }}" alt="Content Strategy">
+                <img src="{{ '/assets/images/content-strategy-skills.png' | relative_url }}" alt="Content Strategy">
                 <h3>Content Strategy</h3>
                 <p>Creating engaging content with a strategy-driven approach.</p>
             </div>
             <div class="skill-card">
-                <img src="{{ '/assets/images/prototype.png' | relative_url }}" alt="UX Writing">
+                <img src="{{ '/assets/images/ux-writing-skills.png' | relative_url }}" alt="UX Writing">
                 <h3>UX Writing</h3>
                 <p>Crafting clear, concise copy for intuitive user experiences.</p>
             </div>
             <div class="skill-card">
-                <img src="{{ '/assets/images/prototype.png' | relative_url }}" alt="Prototyping">
-                <h3>Prototyping</h3>
-                <p>Building high-fidelity prototypes to test usability and flow.</p>
+                <img src="{{ '/assets/images/technical-writing-skills.png' | relative_url }}" alt="Prototyping">
+                <h3>Technical Writing</h3>
+                <p>Creating clear, concise developer docs for seamless user experience.</p>
             </div>
         </div>
     </div>

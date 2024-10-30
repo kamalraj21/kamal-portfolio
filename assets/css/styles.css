@@ -302,33 +302,30 @@ nav ul li a:active {
 
 /* Hero Section Image */
 #hero img {
-    max-width: 120px; /* Reduced from 150px */
-    height: 120px; /* Added to maintain aspect ratio */
-    margin-bottom: 2rem;
+    max-width: 120px;
+    height: 120px;
     border-radius: 50%;
-    animation: floatAnimation 4s ease-in-out infinite;
+    margin-bottom: 2rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border: 3px solid rgba(255, 255, 255, 0.2);
-    object-fit: cover; /* Ensures image fills circle properly */
+    object-fit: cover;
+    animation: floating 3s ease-in-out infinite;
 }
 
-/* Refined float animation */
-@keyframes floatAnimation {
-    0% {
-        transform: translateY(0) rotate(0deg);
+/* Smooth floating animation */
+@keyframes floating {
+    0% { 
+        transform: translate(0, 0px); 
     }
-    25% {
-        transform: translateY(-8px) rotate(2deg);
+    50% { 
+        transform: translate(0, 15px); 
     }
-    75% {
-        transform: translateY(8px) rotate(-2deg);
-    }
-    100% {
-        transform: translateY(0) rotate(0deg);
+    100% { 
+        transform: translate(0, 0px); 
     }
 }
 
-/* Optional: Add hover effect */
+/* Optional: Add hover effect to pause animation */
 #hero img:hover {
     animation-play-state: paused;
     transform: scale(1.05);
@@ -1723,7 +1720,6 @@ body[data-theme="dark"] .about-item p {
         transform: scale(1);
     }
 }
-
 
 
 

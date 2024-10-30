@@ -154,6 +154,11 @@ body {
     opacity: 0.9;
 }
 
+/* Add this new style */
+.quick-nav a[href*="#projects"] {
+    scroll-margin-top: 100px; /* Adjusts scroll position to account for fixed header */
+}
+
 /* Hero Section */
 .case-study-hero {
     padding: 120px 0 80px;
@@ -1667,5 +1672,23 @@ html[data-theme="dark"],
 [data-theme="dark"] #overview p[style],
 [data-theme="dark"] .overview-section p[style] {
     color: #a8b2d1 !important;
+}
+
+/* Add this to your existing CSS */
+#projects {
+    scroll-margin-top: 80px; /* Adjust this value based on your navbar height */
+}
+
+.logo-link {
+    color: var(--navbar-text, #ffffff);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.logo-link:hover {
+    color: var(--primary-teal);
 }
 
